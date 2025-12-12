@@ -36,7 +36,7 @@ export default function MenuComponent() {
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex gap-10 items-center">
-          <ul className="flex gap-6 items-center">
+          {/* <ul className="flex gap-6 items-center">
             {pageData.headmenuitems.linkedItems.map((item: any) => (
               <li key={item.system.id}>
                 <Link
@@ -47,9 +47,8 @@ export default function MenuComponent() {
                 </Link>
               </li>
             ))}
-          </ul>
+          </ul> */}
 
-          {/* Partner Logos */}
           <div className="flex gap-4 items-center">
             {pageData.partneritems.linkedItems.map((item: any) => (
               <Link
@@ -79,7 +78,7 @@ export default function MenuComponent() {
       {isOpen && (
         <div className="lg:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-md">
           <div className="px-6 py-6 space-y-6">
-            <ul className="flex flex-col gap-4">
+            {/* <ul className="flex flex-col gap-4">
               {pageData.headmenuitems.linkedItems.map((item: any) => (
                 <li key={item.system.id}>
                   <Link
@@ -91,7 +90,7 @@ export default function MenuComponent() {
                   </Link>
                 </li>
               ))}
-            </ul>
+            </ul> */}
 
             {/* Partner Logos (Mobile) */}
             <div className="flex flex-wrap gap-4 pt-4 border-t border-white/20">

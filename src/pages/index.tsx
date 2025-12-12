@@ -262,7 +262,7 @@ export default function Home({ pageData }: any) {
             />
           )}
           <div className="relative z-10  h-full flex justify-center items-end ">
-            <div className="flex gap-5 items-center ">
+            <div className="flex flex-wrap gap-5 items-center ">
               {pageData.ctacardbuttons.linkedItems.map((item: any) => {
                 return (
                   <Link
