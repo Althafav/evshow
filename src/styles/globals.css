@@ -1,26 +1,75 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Body text */
+.font-inter {
+  font-family: var(--font-inter), system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Headings */
+.font-bruno {
+  font-family: var(--font-bruno-ace), system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Optional: make it global */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  background-color: #010d17;
+  color: white;
+}
+
+h1,
+h2,
+h3,
+.heading {
+  font-family: var(--font-bruno-ace), system-ui, sans-serif;
+}
+
+.container {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 1rem;
+
+  max-width: clamp(640px, 90vw, 1536px);
+}
+
+.ev-gradient-stroke {
+  position: relative;
+  border-radius: 0.75rem; /* 12px */
+}
+
+/* Gradient stroke only (no fill) */
+.ev-gradient-stroke::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 3px; /* stroke thickness */
+  border-radius: inherit;
+
+  background: linear-gradient(
+    270deg,
+    #0096ff -2.69%,
+    #07afd2 -2.68%,
+    #1cfb4b 104.04%
+  );
+
+  /* show ONLY the border ring, cut out the center */
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+
+  pointer-events: none;
+}
+
+.gradient-text {
+  background: linear-gradient(
+    270deg,
+    #0096ff -2.69%,
+    #07afd2 -2.68%,
+    #1cfb4b 104.04%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
