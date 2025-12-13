@@ -175,7 +175,7 @@ export default function Home({ pageData }: any) {
               {highlightEV(pageData.experiencehighlightheading.value)}
             </h2>
             <img
-              className=" object-cover max-w-150"
+              className=" object-cover max-w-150 w-full"
               src={pageData.experiencehighlightimage.value[0]?.url}
               alt={pageData.experiencehighlightimage.value[0]?.name}
             />
