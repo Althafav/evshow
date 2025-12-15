@@ -22,12 +22,12 @@ export default function CTAButton({
   };
 
   return (
-    <Link
+    <a
       target={target}
       href={buttonlink}
       className={`${baseStyles} ${variants[variant]}`}
     >
       {buttonname}
-    </Link>
+    </a>
   );
 }

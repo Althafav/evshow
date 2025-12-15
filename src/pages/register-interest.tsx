@@ -2,7 +2,8 @@ import RegisterInterestForm from "@/components/Form/RegisterInterestForm";
 import Section from "@/components/UI/Section";
 import GenericData from "@/constants/countryData";
 import { deliveryClient } from "@/modules/Globals";
-import React from "react";
+import JsLoader from "@/modules/JsLoader";
+import React, { useEffect } from "react";
 
 export default function Page({
   mainsource,
@@ -12,6 +13,7 @@ export default function Page({
   pageData,
   attendAs,
 }: any) {
+
   return (
     <Section className="container mx-auto">
       <div className=" grid sm:grid-cols-2 gap-10">

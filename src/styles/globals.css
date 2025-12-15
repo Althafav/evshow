@@ -1,5 +1,5 @@
 @import "tailwindcss";
-
+@plugin "@tailwindcss/typography";
 /* Body text */
 .font-inter {
   font-family: var(--font-inter), system-ui, sans-serif;
