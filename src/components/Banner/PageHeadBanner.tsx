@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ExhibitorBanner({ heading, subheading }: any) {
+export default function PageHeadBanner({ heading, subheading }: any) {
   return (
     <div>
       <div className="relative overflow-hidden bg-[#021412]">
@@ -34,15 +34,16 @@ export default function ExhibitorBanner({ heading, subheading }: any) {
         {/* CONTENT */}
         <div className="relative z-10 container mx-auto px-6 py-24 text-center">
           <h1
-            className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-wide mb-6 
+            className="text-4xl sm:text-5xl font-semibold tracking-wide mb-6 
           gradient-text"
           >
             {heading}
           </h1>
 
-          <p className="max-w-3xl mx-auto text-gray-300 text-base sm:text-lg leading-relaxed">
-            {subheading}
-          </p>
+          <div
+            className="max-w-7xl prose  mx-auto text-gray-300 text-md leading-relaxed"
+            dangerouslySetInnerHTML={{ __html: subheading }}
+          ></div>
         </div>
       </div>
     </div>

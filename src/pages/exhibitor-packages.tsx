@@ -6,7 +6,7 @@ import React from "react";
 
 export async function getStaticProps() {
   const res = await deliveryClient
-    .item("experience_page")
+    .item("exhibitor_packages_and_floor_plan_page")
     .depthParameter(2)
     .toPromise();
 
@@ -18,9 +18,10 @@ export async function getStaticProps() {
   };
 }
 
-export default function experience({ pageData }: any) {
+export default function Page({ pageData }: any) {
   return (
     <div>
+      {" "}
       <div className="relative py-20">
         {pageData.bannerimage.value && (
           <div
@@ -32,12 +33,10 @@ export default function experience({ pageData }: any) {
         )}
 
         <div className="relative z-10 container mx-auto">
-          <h1 className="text-3xl sm:text-4xl text-center max-w-xl mx-auto mb-4">
-            {highlightEV(pageData.bannerheading.value)}
+          <h1 className="text-3xl gradient-text sm:text-4xl text-center max-w-xl mx-auto mb-4">
+            {pageData.bannerheading.value}
           </h1>
-          <p className="text-xl max-w-xl mx-auto text-center">
-            {pageData.bannersubheading.value}
-          </p>
+
           {pageData.bannercta.linkedItems.length > 0 && (
             <div className="mt-4 flex gap-3 flex-wrap justify-center">
               {pageData.bannercta.linkedItems.map((item: any) => {
@@ -54,32 +53,42 @@ export default function experience({ pageData }: any) {
           )}
         </div>
       </div>
-
-      <Section>
-        <div className="container mx-auto">
+      <Section className="relative overflow-hidden">
+        <div className="pointer-events-none absolute inset-0 flex justify-center items-center z-0">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 688 361"
+            className="w-225 max-w-none opacity-[0.07]"
+            fill="none"
+          >
+            <g>
+              <path
+                d="M395.66 289.817L333.712 369L0 -72H119.334L395.236 287.994C395.448 288.585 395.607 289.177 395.66 289.817Z"
+                fill="#1CFB4B"
+              />
+              <path
+                d="M688 -72L513.65 144.898H386.85L569.125 -72H688Z"
+                fill="#1CFB4B"
+              />
+            </g>
+          </svg>
+        </div>
+        <div className="relative z-10 container mx-auto">
           <div className="grid sm:grid-cols-2 gap-5">
-            {pageData.experienceitems.linkedItems.map((item: any) => {
-              return (
-                <div
-                  key={item.system.id}
-                  className="flex flex-col gap-5 p-10 rounded-3xl bg-black"
-                >
-                  <h2 className="text-3xl gradient-text">
-                    {item.elements.name.value}
-                  </h2>
-                  <div
-                    className="text-gray-100"
-                    dangerouslySetInnerHTML={{
-                      __html: item.elements.content.value,
-                    }}
-                  />
-                  <img
-                    src={item.elements.image.value[0]?.url}
-                    alt={item.elements.name.value}
+            <div>
+              <h2 className="text-3xl text-white">
+                {pageData.floorplanheading.value}
+              </h2>
+
+              {pageData.floorplanctalink.value && (
+                <div className="mt-8">
+                  <CTAButton
+                    buttonname={pageData.floorplanctaname.value}
+                    buttonlink={pageData.floorplanctalink.value}
                   />
                 </div>
-              );
-            })}
+              )}
+            </div>
           </div>
         </div>
       </Section>

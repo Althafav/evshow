@@ -33,7 +33,7 @@ export default function ConferenceBanner({ heading, subheading }: any) {
 
         {/* CONTENT */}
         <div className="relative z-10 container mx-auto px-6 py-24 text-center">
-          <h1 className="text-[#1CFB4B] text-4xl sm:text-5xl md:text-6xl font-semibold tracking-wide mb-6 max-w-4xl mx-auto">
+          <h1 className="gradient-text leading-snug text-4xl sm:text-5xl md:text-6xl font-semibold tracking-wide mb-6 max-w-4xl mx-auto">
             {heading}
           </h1>
 

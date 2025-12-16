@@ -1,3 +1,4 @@
+import CTABlock from "@/components/UI/CTABlock";
 import CTAButton from "@/components/UI/CTAButton";
 import Section from "@/components/UI/Section";
 import { highlightEV } from "@/lib/textHelpers";
@@ -6,7 +7,7 @@ import React from "react";
 
 export async function getStaticProps() {
   const res = await deliveryClient
-    .item("experience_page")
+    .item("attend_page")
     .depthParameter(2)
     .toPromise();
 
@@ -18,25 +19,32 @@ export async function getStaticProps() {
   };
 }
 
-export default function experience({ pageData }: any) {
+export default function attend({ pageData }: any) {
   return (
     <div>
+      {" "}
       <div className="relative py-20">
         {pageData.bannerimage.value && (
           <div
-            className="absolute inset-0 bg-cover bg-center brightness-50"
+            className="absolute inset-0 bg-cover bg-center brightness-25"
             style={{
               backgroundImage: `url(${pageData.bannerimage.value[0]?.url})`,
             }}
           />
         )}
 
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-[#021412] via-[#021412]/80 to-transparent z-1" />
+
         <div className="relative z-10 container mx-auto">
-          <h1 className="text-3xl sm:text-4xl text-center max-w-xl mx-auto mb-4">
+          <h1 className="text-3xl sm:text-5xl text-center max-w-xl mx-auto mb-4">
             {highlightEV(pageData.bannerheading.value)}
           </h1>
-          <p className="text-xl max-w-xl mx-auto text-center">
+          <p className="text-xl max-w-2xl mx-auto text-center mb-3">
             {pageData.bannersubheading.value}
+          </p>
+
+          <p className="text-xl max-w-2xl mx-auto text-center gradient-text">
+            {pageData.datevenue.value}
           </p>
           {pageData.bannercta.linkedItems.length > 0 && (
             <div className="mt-4 flex gap-3 flex-wrap justify-center">
@@ -54,35 +62,34 @@ export default function experience({ pageData }: any) {
           )}
         </div>
       </div>
-
       <Section>
         <div className="container mx-auto">
-          <div className="grid sm:grid-cols-2 gap-5">
-            {pageData.experienceitems.linkedItems.map((item: any) => {
+          <h2 className="gradient-text text-center text-3xl mb-3">
+            {pageData.whoattendheading.value}
+          </h2>
+          <p className="text-center text-gray-100 max-w-3xl mx-auto mb-3">
+            {pageData.whoattendsubheading.value}
+          </p>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 mt-8">
+            {pageData.whoattenditems.linkedItems.map((item: any) => {
               return (
-                <div
-                  key={item.system.id}
-                  className="flex flex-col gap-5 p-10 rounded-3xl bg-black"
-                >
-                  <h2 className="text-3xl gradient-text">
+                <div key={item.system.id} className="p-5 ev-gradient-stroke">
+                  <h3 className=" text-sm text-center">
                     {item.elements.name.value}
-                  </h2>
-                  <div
-                    className="text-gray-100"
-                    dangerouslySetInnerHTML={{
-                      __html: item.elements.content.value,
-                    }}
-                  />
-                  <img
-                    src={item.elements.image.value[0]?.url}
-                    alt={item.elements.name.value}
-                  />
+                  </h3>
                 </div>
               );
             })}
           </div>
         </div>
       </Section>
+      <CTABlock
+        heading={pageData.visitorctaheading.value}
+        subheading={pageData.visitorctasubheading.value}
+        ctaname={pageData.visitorctaname.value}
+        ctalink={pageData.visitorctalink.value}
+      />
     </div>
   );
 }

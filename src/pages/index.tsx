@@ -252,7 +252,7 @@ export default function Home({ pageData }: any) {
       </Section>
 
       <Section className="relative  ">
-        <div className="container mx-auto relative h-96 overflow-hidden rounded-3xl py-12 sm:py-16">
+        <div className="container mx-auto relative h-150 overflow-hidden rounded-3xl py-12 sm:py-16">
           {pageData.ctacardbackgroundimage.value[0]?.url && (
             <div
               className="absolute inset-0 bg-cover bg-center"

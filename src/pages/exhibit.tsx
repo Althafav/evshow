@@ -87,9 +87,11 @@ export default function exhibit({ pageData }: any) {
             }}
           />
         )}
-          <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/60 to-black/30" />
+        <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/60 to-black/30" />
         <div className="relative z-10 container mx-auto">
-          <h2 className="text-3xl sm:text-4xl gradient-text max-w-md mb-3">{pageData.exhibitctaheading.value}</h2>
+          <h2 className="text-3xl sm:text-4xl gradient-text max-w-md mb-3">
+            {pageData.exhibitctaheading.value}
+          </h2>
           <p>{pageData.exhibitctasubheading.value}</p>
 
           {pageData.exhibitctabuttons.linkedItems.length > 0 && (

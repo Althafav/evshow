@@ -1,5 +1,22 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+
+@layer utilities {
+  /* Basic zoom-in */
+  .hover-card-zoom-in {
+    @apply shadow-xl p-10 rounded-3xl transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:-translate-y-2;
+  }
+
+  /* Subtle lift + shadow only */
+  .hover-card-lift {
+    @apply transition-all duration-300 hover:-translate-y-2;
+  }
+
+  /* Slight tilt with scale */
+  .hover-tilt {
+    @apply transition-transform duration-500 hover:-rotate-3 hover:scale-[1.05];
+  }
+}
 /* Body text */
 .font-inter {
   font-family: var(--font-inter), system-ui, sans-serif;
@@ -72,4 +89,13 @@ h3,
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+.gradient-bg {
+  background: linear-gradient(
+    270deg,
+    #0096ff -2.69%,
+    #07afd2 -2.68%,
+    #1cfb4b 104.04%
+  );
 }

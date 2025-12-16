@@ -1,4 +1,5 @@
 import ConferenceBanner from "@/components/ConferencePage/ConferenceBanner";
+import CTAButton from "@/components/UI/CTAButton";
 import Section from "@/components/UI/Section";
 import { deliveryClient } from "@/modules/Globals";
 import React from "react";
@@ -62,8 +63,9 @@ export default function conference({ pageData }: any) {
             <div className="grid sm:grid-cols-2 gap-5 mt-8">
               {pageData.themeitems.linkedItems.map((item: any) => {
                 return (
-                  <div
-                    className="bg-black p-10 rounded-3xl"
+                  <a
+                    href={item.elements.ctalink.value}
+                    className="bg-black p-10 rounded-3xl hover-card-lift"
                     key={item.system.id}
                   >
                     <h3 className="mb-3 text-xl">{item.elements.name.value}</h3>
@@ -79,7 +81,7 @@ export default function conference({ pageData }: any) {
                         alt={item.elements.image.value[0]?.name}
                       />
                     </div>
-                  </div>
+                  </a>
                 );
               })}
             </div>
@@ -159,7 +161,7 @@ export default function conference({ pageData }: any) {
 
         <Section>
           <div className="container mx-auto">
-            <h2 className="gradient-text text-center text-3xl">
+            <h2 className="gradient-text text-center text-3xl mb-3">
               {pageData.speakerheading.value}
             </h2>
             <p className="text-center text-gray-100 max-w-3xl mx-auto mb-3">
@@ -177,6 +179,42 @@ export default function conference({ pageData }: any) {
                 );
               })}
             </div>
+          </div>
+        </Section>
+
+        <Section className="relative overflow-hidden">
+          <div className="pointer-events-none absolute inset-0 flex justify-center items-center z-0">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 688 361"
+              className="w-225 max-w-none opacity-[0.07]"
+              fill="none"
+            >
+              <g>
+                <path
+                  d="M395.66 289.817L333.712 369L0 -72H119.334L395.236 287.994C395.448 288.585 395.607 289.177 395.66 289.817Z"
+                  fill="#1CFB4B"
+                />
+                <path
+                  d="M688 -72L513.65 144.898H386.85L569.125 -72H688Z"
+                  fill="#1CFB4B"
+                />
+              </g>
+            </svg>
+          </div>
+          <div className="container mx-auto">
+            <h2 className="text-3xl sm:text-3xl text-center mb-3">
+              {pageData.interestctaheading.value}
+            </h2>
+            {pageData.interestctalink.value && (
+              <div className="mt-4 flex justify-center">
+                <CTAButton
+                  variant="primary"
+                  buttonname={pageData.interestctaname.value}
+                  buttonlink={pageData.interestctalink.value}
+                />
+              </div>
+            )}
           </div>
         </Section>
       </div>
