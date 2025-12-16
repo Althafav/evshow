@@ -27,11 +27,11 @@ export default function Page() {
               <img
                 src="/assets/imgs/speaker1.png"
                 alt={speaker.name}
-                className="h-[420px] w-full object-cover grayscale"
+                className="h-105 w-full object-cover grayscale"
               />
 
               {/* Dark gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent" />
 
               {/* Content */}
               <div className="absolute bottom-0 p-6">

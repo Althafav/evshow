@@ -95,7 +95,7 @@ export default function Page({ pageData }: any) {
           ctalink={pageData.presskitctalink.value}
         />
       </Section>
-      <Section>
+      <Section id="media-enquiries">
         <div className="container mx-auto">
           <div className="grid sm:grid-cols-2 items-center gap-10">
             <div>
