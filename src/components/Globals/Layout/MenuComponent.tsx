@@ -75,7 +75,7 @@ export default function MenuComponent() {
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex gap-10 items-center">
-          <ul className="flex gap-6 items-center">
+          <ul className="flex gap-5 items-center">
             {menuItems.map((item: any) => {
               const hasSubs = item.subitems.length > 0;
 
@@ -85,7 +85,7 @@ export default function MenuComponent() {
                   <div className="group inline-flex items-center">
                     <Link
                       href={item.link}
-                      className="text-white hover:opacity-80 transition"
+                      className="text-white text-sm hover:opacity-80 transition"
                     >
                       {item.name}
                     </Link>
@@ -110,7 +110,7 @@ export default function MenuComponent() {
                             <li key={sub.id}>
                               <Link
                                 href={sub.link}
-                                className="block px-4 py-2 text-white hover:bg-white/10 transition"
+                                className="block text-sm px-4 py-2 text-white hover:bg-white/10 transition"
                               >
                                 {sub.name}
                               </Link>
@@ -130,7 +130,7 @@ export default function MenuComponent() {
             {partners.map((p: any) => (
               <Link key={p.id} href={p.link}>
                 <img
-                  className="h-10 object-contain"
+                  className="h-14 object-contain"
                   src={p.logoUrl}
                   alt={p.logoName}
                 />

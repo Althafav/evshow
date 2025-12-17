@@ -25,7 +25,7 @@ export default function Page({
             }}
           />
 
-          <div>
+          <div className="pt-5">
             <img src={pageData.bannerimage.value[0]?.url} alt="" />
           </div>
         </div>

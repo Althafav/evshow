@@ -235,9 +235,13 @@ export default function Home({ pageData }: any) {
               <h2 className="gradient-text text-xl mb-3 sm:mb-0">
                 {pageData.strategicpartnerheading.value}
               </h2>
-              <p className="text-sm text-gray-200">
-                {pageData.strategicpartnersubheading.value}
-              </p>
+
+              <div
+                className="prose text-white prose-a:text-[#1CFB4B]"
+                dangerouslySetInnerHTML={{
+                  __html: pageData.strategicpartnerdescription.value,
+                }}
+              />
             </div>
 
             <div>

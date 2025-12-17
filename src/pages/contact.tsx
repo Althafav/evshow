@@ -36,7 +36,7 @@ export default function contact({ pageData }: any) {
             {pageData.bannersubheading.value}
           </p>
 
-          <div className="grid sm:grid-cols-4 gap-5 mt-10">
+          <div className="grid sm:grid-cols-4 gap-5 mt-10 prose-a:text-[#1CFB4B]">
             {pageData.contactitems.linkedItems.map((item: any) => {
               return (
                 <div
@@ -81,6 +81,7 @@ export default function contact({ pageData }: any) {
             <h3 className="text-3xl gradient-text text-center mb-8">
               {pageData.locationheading.value}
             </h3>
+            <p className="text-center text-xl font-medium">Zabeel hall 4-5-6</p>
             <p className="text-center font-medium text-white text-xl">
               {pageData.address1.value}
             </p>

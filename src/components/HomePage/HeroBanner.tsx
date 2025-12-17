@@ -31,7 +31,7 @@ export default function HeroBanner({
 
           <p className="mt-2 text-xl font-medium text-white">{subheading}</p>
 
-          <p className="mt-5 text-sm sm:text-base text-emerald-300 tracking-wide">
+          <p className="mt-5 text-md sm:text-base text-white tracking-wide">
             {dateVenue}
           </p>
 

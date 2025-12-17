@@ -135,7 +135,8 @@ export default function Page({ pageData }: any) {
 
                     <div className="">
                       <div className="flex flex-wrap justify-center gap-8">
-                        {item.elements.items.linkedItems.map(
+                        <h3>To be Announced Soon.</h3>
+                        {/* {item.elements.items.linkedItems.map(
                           (partner: any, iIdx: number) => {
                             return (
                               <Link
@@ -156,7 +157,7 @@ export default function Page({ pageData }: any) {
                               </Link>
                             );
                           }
-                        )}
+                        )} */}
                       </div>
                     </div>
                   </div>
