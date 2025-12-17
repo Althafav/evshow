@@ -95,7 +95,7 @@ function AccordionRow({
       >
         <div className="px-4 sm:px-6 pb-5 pt-1">
           <div
-            className="prose max-w-none text-sm sm:text-base text-gray-100"
+            className="prose max-w-none text-sm sm:text-base text-gray-100 prose-strong:text-white"
             dangerouslySetInnerHTML={{ __html: html || "" }}
           />
         </div>

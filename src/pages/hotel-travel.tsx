@@ -86,12 +86,14 @@ export default function Page({ pageData }: any) {
                         <img
                           src={item.elements.companylogo.value[0]?.url}
                           alt={item.elements.image.value[0]?.name}
+                        
                         />
                       </div>
                       <img
-                        className="w-full object-cover"
+                        className="w-full object-cover aspect-video max-h-62.5"
                         src={item.elements.image.value[0]?.url}
                         alt={item.elements.image.value[0]?.name}
+                       
                       />
                     </div>
 
