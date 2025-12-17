@@ -156,9 +156,9 @@ export default function Home({ pageData }: any) {
                 <div className=" mt-8">
                   <Link
                     className="text-white underline flex gap-2 items-center"
-                    href={pageData.experiencehighlightctalink.value}
+                    href={pageData.conferencehighlightctalink.value}
                   >
-                    {pageData.experiencehighlightctaname.value}
+                    {pageData.conferencehighlightctaname.value}
                     <ArrowRightComponent />
                   </Link>
                 </div>
