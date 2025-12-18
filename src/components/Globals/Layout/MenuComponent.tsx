@@ -127,7 +127,7 @@ export default function MenuComponent() {
             })}
           </ul>
 
-          <LanguageToggle/>
+          {/* <LanguageToggle/> */}
 
           {/* Partner Logos */}
           <div className="flex gap-4 items-center">
