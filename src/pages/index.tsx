@@ -8,22 +8,33 @@ import ArrowRightComponent from "@/components/UI/Icons/ArrowRightComponent";
 import Section from "@/components/UI/Section";
 import { highlightEV } from "@/lib/textHelpers";
 import { deliveryClient } from "@/modules/Globals";
+import { GetStaticProps } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  
+  const langMap: Record<string, string> = {
+    en: "default",  
+    ar: "Arabic",
+    zh: "Chinese",
+  };
+
+  const language = langMap[locale ?? "en"];
+
   const res = await deliveryClient
     .item("home_page")
     .depthParameter(2)
+    .languageParameter(language)
     .toPromise();
 
   return {
     props: {
-      pageData: res.data.item.elements || null,
+      pageData: res.data.item?.elements ?? null,
     },
     revalidate: 60,
   };
-}
+};
 
 export default function Home({ pageData }: any) {
   if (!pageData) return null;
@@ -129,7 +140,7 @@ export default function Home({ pageData }: any) {
               </div>
 
               <div className="sm:col-span-6 flex flex-col items-end">
-                <div className="flex gap-10 flex-wrap">
+                <div className="grid sm:grid-cols-4 gap-5">
                   {pageData.conferencehighlightitems.linkedItems.map(
                     (item: any) => {
                       return (
@@ -142,12 +153,12 @@ export default function Home({ pageData }: any) {
                           <p className="gradient-text max-w-44">
                             {item.elements.name.value}
                           </p>
-                          <div
+                          {/* <div
                             className="max-w-44"
                             dangerouslySetInnerHTML={{
                               __html: item.elements.content.value,
                             }}
-                          />
+                          /> */}
                         </div>
                       );
                     }

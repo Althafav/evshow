@@ -1,7 +1,11 @@
 import { socialLinks } from "@/constants/socialLinks";
 import { deliveryClient } from "@/modules/Globals";
 import Link from "next/link";
+
 import React, { useEffect, useState } from "react";
+import { FaFacebook, FaInstagram, FaLinkedinIn,  FaTiktok, FaYoutube } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { PiSnapchatLogoFill } from "react-icons/pi";
 
 export default function FooterComponent() {
   const [pageData, setPageData] = useState<any | null>(null);
@@ -30,21 +34,77 @@ export default function FooterComponent() {
                 alt="Logo"
               />
             </Link>
-            <ul className="social-list flex gap-3 mt-4">
-              {socialLinks.map((item) => (
-                <li key={item.name}>
-                  <a
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={item.name}
-                    className="w-8 h-8 bg-white  inline-flex justify-center items-center text-black rounded-full"
-                  >
-                    {item.icon}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <div className="social-list flex gap-3 mt-4 relative z-50">
+              <a
+                href="https://www.linkedin.com/company/ev-world-ae"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="w-8 h-8 bg-white inline-flex justify-center items-center text-black rounded-full"
+              >
+                <FaLinkedinIn size={18} />
+              </a>
+
+              <a
+                href="https://www.youtube.com/@evworld2026"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+                className="w-8 h-8 bg-white inline-flex justify-center items-center text-black rounded-full"
+              >
+                <FaYoutube size={18} />
+              </a>
+
+              <a
+                href="https://www.instagram.com/evworld2026/?hl=en"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="w-8 h-8 bg-white inline-flex justify-center items-center text-black rounded-full"
+              >
+                <FaInstagram size={18} />
+              </a>
+
+              <a
+                href="https://x.com/evworld2026"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X (Twitter)"
+                className="w-8 h-8 bg-white inline-flex justify-center items-center text-black rounded-full"
+              >
+                <FaXTwitter  size={18} />
+              </a>
+
+              <a
+                href="https://www.facebook.com/evworld2026/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="w-8 h-8 bg-white inline-flex justify-center items-center text-black rounded-full"
+              >
+                <FaFacebook size={18} />
+              </a>
+
+              <a
+                href="https://www.tiktok.com/@evworld.ae?lang=en"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TikTok"
+                className="w-8 h-8 bg-white inline-flex justify-center items-center text-black rounded-full"
+              >
+                <FaTiktok size={18} />
+              </a>
+
+               <a
+                href="https://snapchat.com/t/lXXuxOvh"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TikTok"
+                className="w-8 h-8 bg-white inline-flex justify-center items-center text-black rounded-full"
+              >
+                <PiSnapchatLogoFill    size={18} />
+              </a>
+            </div>
           </div>
 
           <div className="lg:col-span-8">

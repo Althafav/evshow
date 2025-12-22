@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
+import { useRouter } from "next/router";
 
 type Lang = "en" | "ar" | "zh";
 
@@ -10,41 +11,41 @@ const LANGS: { code: Lang; label: string; dir: "ltr" | "rtl" }[] = [
   { code: "zh", label: "中文", dir: "ltr" },
 ];
 
-export default function LanguageToggle({
-  value = "en",
-  onChange,
-}: {
-  value?: Lang;
-  onChange?: (lang: Lang) => void;
-}) {
+export default function LanguageToggle() {
+  const router = useRouter();
+  const { locale, pathname, asPath, query } = router;
+
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
 
   const current = useMemo(
-    () => LANGS.find((l) => l.code === value) ?? LANGS[0],
-    [value]
+    () => LANGS.find((l) => l.code === locale) ?? LANGS[0],
+    [locale]
   );
 
   useEffect(() => {
     const onDocClick = (e: MouseEvent) => {
-      if (!ref.current) return;
-      if (!ref.current.contains(e.target as Node)) setOpen(false);
-    };
-    const onEsc = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
+      if (!ref.current?.contains(e.target as Node)) setOpen(false);
     };
     document.addEventListener("mousedown", onDocClick);
-    document.addEventListener("keydown", onEsc);
-    return () => {
-      document.removeEventListener("mousedown", onDocClick);
-      document.removeEventListener("keydown", onEsc);
-    };
+    return () => document.removeEventListener("mousedown", onDocClick);
   }, []);
 
-  const selectLang = (lang: Lang) => {
-    onChange?.(lang);
+  const selectLang = async (lang: Lang) => {
     setOpen(false);
-   
+
+    await router.push(
+      { pathname, query },
+      asPath,
+      { locale: lang }
+    );
+
+    // Update document direction (important for Arabic)
+    const selected = LANGS.find((l) => l.code === lang);
+    if (selected) {
+      document.documentElement.dir = selected.dir;
+      document.documentElement.lang = lang;
+    }
   };
 
   return (
@@ -52,94 +53,44 @@ export default function LanguageToggle({
       <button
         type="button"
         onClick={() => setOpen((s) => !s)}
-        className={[
-          "group flex items-center gap-1 rounded-xl px-2 py-1",
-          "bg-[#06141f]/80 backdrop-blur",
-          "",
-          "text-white",
-          "transition",
-        ].join(" ")}
-        aria-haspopup="menu"
-        aria-expanded={open}
+        className="group flex items-center gap-1 rounded-xl px-2 py-1 bg-[#06141f]/80 backdrop-blur text-white"
       >
-    
         <span className="inline-flex h-6 w-6 items-center justify-center">
           <GlobeIcon />
         </span>
 
-      
         <span className="h-6 w-px bg-white/20" />
 
-       
-        <span className="text-xs font-semibold tracking-wide">
+        <span className="text-xs font-semibold">
           {current.label}
         </span>
 
-    
         <svg
-          className={[
-            "h-4 w-4 text-white/80 transition-transform",
-            open ? "rotate-180" : "rotate-0",
-          ].join(" ")}
+          className={`h-4 w-4 transition-transform ${open ? "rotate-180" : ""}`}
           viewBox="0 0 20 20"
-          fill="none"
-          aria-hidden="true"
         >
           <path
             d="M5 7.5L10 12.5L15 7.5"
             stroke="currentColor"
             strokeWidth="1.8"
             strokeLinecap="round"
-            strokeLinejoin="round"
           />
         </svg>
       </button>
 
-      {/* Dropdown */}
       {open && (
-        <div
-          className={[
-            "absolute right-0 mt-2 w-40 overflow-hidden rounded-xl",
-            "border border-white/10 bg-[#06141f]/95 backdrop-blur",
-            "shadow-lg shadow-black/30",
-            "z-50",
-          ].join(" ")}
-          role="menu"
-        >
-          {LANGS.map((l) => {
-            const active = l.code === value;
-            return (
-              <button
-                key={l.code}
-                type="button"
-                onClick={() => selectLang(l.code)}
-                className={[
-                  "flex w-full items-center justify-between px-4 py-3 text-left",
-                  "text-sm text-white/90 hover:bg-white/5",
-                  active ? "bg-white/5" : "",
-                ].join(" ")}
-                role="menuitem"
-              >
-                <span className="font-medium text-xs">{l.label}</span>
-                {active && (
-                  <svg
-                    className="h-4 w-4 text-white/90"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M4.5 10.5L8.2 14.2L15.8 6.6"
-                      stroke="currentColor"
-                      strokeWidth="1.8"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                )}
-              </button>
-            );
-          })}
+        <div className="absolute right-0 mt-2 w-40 rounded-xl bg-[#06141f]/95 border border-white/10 z-50">
+          {LANGS.map((l) => (
+            <button
+              key={l.code}
+              onClick={() => selectLang(l.code)}
+              className={`w-full px-4 py-3 text-left text-sm hover:bg-white/5 ${
+                l.code === locale ? "bg-white/5" : ""
+              }`}
+            >
+              {l.label}
+            </button>
+          ))}
         </div>
       )}
     </div>

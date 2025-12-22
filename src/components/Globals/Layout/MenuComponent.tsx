@@ -64,16 +64,40 @@ export default function MenuComponent() {
 
   return (
     <header className="py-4 relative z-50">
-      
-      <div className="container mx-auto flex justify-between items-center px-4">
+      <div className="container mx-auto ">
         {/* Logo */}
-        <Link href={pageData.evlogolink.value} className="shrink-0">
-          <img
-            className="w-16 object-contain"
-            src={pageData.evlogo.value[0]?.url}
-            alt="Logo"
-          />
-        </Link>
+        <div className="flex justify-between items-center">
+          <Link href={pageData.evlogolink.value} className="shrink-0">
+            <img
+              className="w-16 object-contain"
+              src={pageData.evlogo.value[0]?.url}
+              alt="Logo"
+            />
+          </Link>
+
+          <button
+            className="lg:hidden text-white"
+            onClick={() => {
+              setIsOpen((v) => !v);
+              if (isOpen) setOpenMobileSub(null);
+            }}
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+
+          <div className=" gap-4 items-center hidden lg:flex">
+            {partners.map((p: any) => (
+              <Link key={p.id} href={p.link}>
+                <img
+                  className="h-14 object-contain"
+                  src={p.logoUrl}
+                  alt={p.logoName}
+                />
+              </Link>
+            ))}
+          </div>
+        </div>
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex gap-5 items-center">
@@ -127,33 +151,10 @@ export default function MenuComponent() {
             })}
           </ul>
 
-          {/* <LanguageToggle/> */}
+          <LanguageToggle />
 
           {/* Partner Logos */}
-          <div className="flex gap-4 items-center">
-            {partners.map((p: any) => (
-              <Link key={p.id} href={p.link}>
-                <img
-                  className="h-14 object-contain"
-                  src={p.logoUrl}
-                  alt={p.logoName}
-                />
-              </Link>
-            ))}
-          </div>
         </div>
-
-        {/* Mobile Toggle */}
-        <button
-          className="lg:hidden text-white"
-          onClick={() => {
-            setIsOpen((v) => !v);
-            if (isOpen) setOpenMobileSub(null);
-          }}
-          aria-label="Toggle menu"
-        >
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
       </div>
 
       {/* Mobile Menu */}
