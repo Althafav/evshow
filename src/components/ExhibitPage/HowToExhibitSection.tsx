@@ -14,7 +14,7 @@ export default function HowToExhibitSection() {
   return (
     <Section>
       <div className="mx-auto max-w-5xl px-6">
-        <div className="font-serif text-white">
+        <div className=" text-white">
           <h2 className="text-[28px] font-bold leading-tight">
             How to Exhibit
           </h2>
@@ -31,6 +31,15 @@ export default function HowToExhibitSection() {
               </li>
             ))}
           </ul>
+
+          <div className="mt-8">
+            <a
+              href="https://assets-us-01.kc-usercontent.com/9440fe89-4371-0034-df95-ca61aae74cc3/dbdfc3a9-8ae0-4b14-b8d1-ecbd4b93d13d/Rate%20Card.1.pdf"
+              className="py-2 px-4 bg-white rounded text-black"
+            >
+              Download the Exhibitor Profile Pack
+            </a>
+          </div>
         </div>
       </div>
     </Section>
