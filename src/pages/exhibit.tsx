@@ -1,5 +1,7 @@
 import ExhibitorBanner from "@/components/ExhibitorPage/ExhibitorBanner";
 import WhyExhibitCarousel from "@/components/ExhibitorPage/WhyExhibitCarousel";
+import ExhibitorValuePropositionWordStyle from "@/components/ExhibitPage/ExhibitorValuePropositionWordStyle";
+import HowToExhibitSection from "@/components/ExhibitPage/HowToExhibitSection";
 import CTAButton from "@/components/UI/CTAButton";
 import Section from "@/components/UI/Section";
 import { highlightEV } from "@/lib/textHelpers";
@@ -43,6 +45,7 @@ export default function exhibit({ pageData }: any) {
               </div>
 
               <div>
+                <h3 className="mb-3">Benefits:</h3>
                 <WhyExhibitCarousel pageData={pageData} />
               </div>
             </div>
@@ -77,6 +80,9 @@ export default function exhibit({ pageData }: any) {
           </div>
         </div>
       </Section>
+
+      <ExhibitorValuePropositionWordStyle/>
+      <HowToExhibitSection/>
 
       <Section className="relative">
         {pageData.exhibitctabackgroundimage.value && (

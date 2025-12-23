@@ -49,11 +49,11 @@ export default function Home({ pageData }: any) {
         imageUrl={pageData.bannerimage.value[0]?.url}
       />
 
-      <StatsSection
+      {/* <StatsSection
         eventDate={pageData.eventdate.value}
         statsheading={pageData.statisticsheading.value}
         statsitems={pageData.statsitems.linkedItems}
-      />
+      /> */}
       <Section className="relative">
         {pageData.whoyoumeetbackgroundimage.value[0]?.url && (
           <div
@@ -266,7 +266,7 @@ export default function Home({ pageData }: any) {
         </div>
       </Section>
 
-      <Section className="relative  ">
+      {/* <Section className="relative  ">
         <div className="container mx-auto relative h-150 overflow-hidden rounded-3xl py-12 sm:py-16">
           {pageData.ctacardbackgroundimage.value[0]?.url && (
             <div
@@ -293,7 +293,7 @@ export default function Home({ pageData }: any) {
             </div>
           </div>
         </div>
-      </Section>
+      </Section> */}
     </div>
   );
 }
