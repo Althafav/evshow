@@ -37,7 +37,7 @@ export default function HowToExhibitSection() {
               href="https://assets-us-01.kc-usercontent.com/9440fe89-4371-0034-df95-ca61aae74cc3/dbdfc3a9-8ae0-4b14-b8d1-ecbd4b93d13d/Rate%20Card.1.pdf"
               className="py-2 px-4 bg-white rounded text-black"
             >
-              Download the Exhibitor Profile Pack
+              Download the Exhibitor Pack
             </a>
           </div>
         </div>
