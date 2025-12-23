@@ -9,37 +9,50 @@ export default function Page() {
           <div>
             <h3 className="text-3xl mb-8 text-center">About RTA</h3>
             <div className="text-center">
-              Dubai is one of the fastest growing cities in today's world,
-              making the provision of high quality infrastructure facilities
-              absolutely imperative. With that in mind, as well as the high
-              priority allocated by the government of Dubai to the provision of
-              an advanced transport network for the people of Dubai, RTA
-              endeavours to improve the public transport facilities and develop
-              roads across the emirate to make travel safer and smoother.
+              Dubai’s Roads and Transport Authority (RTA) is responsible for the
+              planning, development, and management of integrated transport
+              systems across the Emirate of Dubai. RTA plays a central role in
+              shaping Dubai’s mobility landscape, ensuring transport systems are
+              safe, efficient, and aligned with the Emirate’s long-term
+              economic, urban, and sustainability objectives. Through policy
+              leadership, infrastructure delivery, and regulatory oversight, RTA
+              supports Dubai’s vision for smart, sustainable, and future-ready
+              mobility.
             </div>
           </div>
 
           <Section>
-            <h3 className="text-3xl mb-8 text-center">Goals and Objectives</h3>
+            <h3 className="text-3xl mb-8 text-center">
+              RTA and Sustainable Mobility
+            </h3>
             <div className="text-center">
-              Dubai is one of the fastest growing cities in today's world,
-              making the provision of high-quality infrastructure facilities
-              imperative. The government of Dubai recognizes the importance of
-              providing an advanced transport network for the people and
-              prioritizes the initiatives to enhance the public transport
-              facilities and improve roads across the emirate to make travel
-              safer and smoother. To achieve this vision, the Roads and
-              Transport Authority (RTA) was formed by decree number 17 for the
-              year 2005. RTA is responsible for planning and providing the
-              requirements of transport, roads & traffic in the Emirate of
-              Dubai, and between Dubai and other Emirates of the UAE and
-              neighboring countries in order to provide an effective & an
-              integrated transport system capable of serving the vital interests
-              of the Emirate.
+              RTA leads the implementation of Dubai’s Green Mobility Strategy
+              and plays a key role in advancing low-emission and electric
+              transport across both public and private sectors. This includes
+              the expansion of electric vehicle infrastructure, integration of
+              clean energy solutions, and adoption of smart and connected
+              mobility systems. RTA’s initiatives support the transition toward
+              sustainable transport networks that reduce environmental impact
+              while enhancing efficiency, accessibility, and quality of life.
             </div>
           </Section>
 
           <Section>
+            <h3 className="text-3xl mb-8 text-center">
+             Strategic Partnership
+            </h3>
+            <div className="text-center">
+              EV World Show is delivered in strategic alignment with the Roads
+              and Transport Authority’s objectives to foster innovation, enable
+              industry collaboration, and support the development of future
+              mobility ecosystems. This strategic alignment reinforces the
+              event’s credibility, policy relevance, and institutional standing,
+              while supporting Dubai’s ambition to position itself as a global
+              leader in electric and sustainable mobility.
+            </div>
+          </Section>
+
+          {/* <Section>
             <h3 className="text-3xl mb-8 text-center">Mission and Vision</h3>
             <div className="grid sm:grid-cols-2 gap-5">
               <div className="ev-gradient-stroke p-5 rounded-2xl">
@@ -64,7 +77,7 @@ export default function Page() {
               standards. RTA's Sustainability long term target is to achieve
               global pioneering levels in Roads & Transport sustainability.
             </p>
-          </Section>
+          </Section> */}
         </div>
       </div>
     </Section>

@@ -14,7 +14,7 @@ export default function Page() {
           />
           <div className="absolute inset-0 bg-black/40 flex items-end">
             <h1 className="p-6 text-3xl md:text-4xl font-semibold text-white">
-              About Dubai
+              Why Dubai
             </h1>
           </div>
         </div>
@@ -22,28 +22,35 @@ export default function Page() {
         <div className="grid md:grid-cols-2 gap-10 items-start">
           <div>
             <p className="text-lg leading-relaxed text-gray-300 max-w-xl mb-3">
-              Dubai is the second largest emirate with an area of 4,114sq. km.,
-              which is about 5 per cent of the UAE without the islands. The
-              older districts of Dubai cover an area of 1500sq. m. and is called
-              'Pearl of the Gulf' and 'Jewel of the world' because of its
-              heritage and history.
+              Dubai offers a unique combination of global connectivity, advanced
+              infrastructure, regulatory clarity, and business-friendly
+              policies, positioning the city as an ideal host for an
+              international platform dedicated to electric and future mobility.
+              The Emirate is guided by a long-term sustainability vision focused
+              on clean energy, low-emission transport, and smart urban
+              development. Through ambitious strategies and clear policy
+              direction, Dubai is accelerating the transition toward sustainable
+              and electric mobility as a core pillar of its economic growth,
+              environmental responsibility, and quality-of-life objectives. This
+              vision provides a stable, future-focused environment for
+              innovation, investment, and large-scale deployment of electric
+              mobility solutions.
             </p>
 
-            <p className="font-bold mb-2">Innovating for the Future</p>
+            <p className="font-bold mb-2">Infrastructure and Innovation</p>
             <p className="mb-3">
-              Dubai’s pursuit in building the city of the future is accelerated
-              through technological advancements in key sectors.
+              Dubai continues to invest in electric vehicle charging networks,
+              smart transport systems, and clean energy integration. These
+              investments support large-scale adoption of electric mobility
+              across public transport networks, commercial fleets, and private
+              use. Ongoing innovation in digital mobility, automation, and
+              infrastructure planning reinforces Dubai’s leadership in deploying
+              future-ready transport solutions.
             </p>
-            <p className="font-bold mb-2">City of the Future</p>
+            <p className="font-bold mb-2">Global Access</p>
             <p className="mb-3">
-              Dubai released a wide range of innovative initiatives led by the
-              Dubai Future Foundation, all aimed at shaping the future of Dubai
-              and the world. From the iconic Museum of the Future to
-              forward-thinking programs like Dubai Future Councils, Dubai Future
-              Forum, and Dubai 10X, these initiatives span research, technology,
-              education, and space exploration. Each project reflects Dubai’s
-              commitment to innovation, global collaboration, and readiness for
-              future challenges.
+              Dubai World Trade Centre provides direct access to global markets through world-class exhibition facilities, logistics capabilities, aviation connectivity, and hospitality infrastructure.
+Its strategic location and international reach make Dubai a natural convening point for global manufacturers, investors, policymakers, and industry leaders participating in EV World Show.
             </p>
 
             <p className="font-bold mb-2">
