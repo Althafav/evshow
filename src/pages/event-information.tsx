@@ -146,7 +146,7 @@ export default function Page({ pageData }: any) {
             {pageData.whydubaiheading.value}
           </h2>
           <div
-            className="prose text-gray-200 mx-auto max-w-4xl"
+            className="prose text-gray-200 mx-auto max-w-4xl text-center prose-strong:text-white"
             dangerouslySetInnerHTML={{ __html: pageData.whydubaicontent.value }}
           />
         </div>
