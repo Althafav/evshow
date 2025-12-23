@@ -26,7 +26,7 @@ export default function exhibit({ pageData }: any) {
     <div>
       <ExhibitorBanner
         heading={pageData.bannerheading.value}
-        subheading={pageData.bannersubheading.value}
+        description={pageData.bannerdescription.value}
       />
       <Section className="relative">
         <div className=" ">

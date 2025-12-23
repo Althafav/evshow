@@ -16,7 +16,7 @@ export default function ExhibitorValuePropositionWordStyle() {
   return (
     <Section>
       <div className="mx-auto max-w-5xl px-6">
-        <div className="font-serif text-white">
+        <div className=" text-white">
           <h2 className="text-[28px] font-bold leading-tight">
             Strategic Value Proposition for Exhibitors
           </h2>

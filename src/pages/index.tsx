@@ -51,38 +51,30 @@ export default function Home({ pageData }: any) {
 
       <Section>
         <div className="container mx-auto">
-          <div className="grid sm:grid-cols-12 gap-5">
-            <div className="sm:col-span-8">
-              <div className="ev-gradient-stroke p-10 sm:flex flex-wrap justify-center">
-                <div className="sm:flex gap-2">
-                  <h2 className="gradient-text text-xl mb-3 sm:mb-0">
-                    {pageData.strategicpartnerheading.value}
-                  </h2>
-
-                  <div
-                    className="prose text-white prose-a:text-[#1CFB4B]"
-                    dangerouslySetInnerHTML={{
-                      __html: pageData.strategicpartnerdescription.value,
-                    }}
-                  />
-                </div>
-
+          <div className="ev-gradient-stroke p-10 sm:flex flex-wrap justify-center">
+            <div className="sm:flex gap-2">
+              <div>
+                <h2 className="gradient-text text-xl mb-3 sm:mb-0">
+                  {pageData.strategicpartnerheading.value}
+                </h2>
                 <div className="mt-4">
                   <img
-                    className="sm:w-76 w-60 mt-4 sm:mt-0"
+                    className="sm:w-96 w-60 mt-4 sm:mt-0"
                     src={pageData.strategicpartnerlogo.value[0]?.url}
                     alt={pageData.strategicpartnerlogo.value[0]?.name}
                   />
                 </div>
               </div>
-            </div>
-            <div className="sm:col-span-4">
+
               <div
+                className="prose text-white prose-a:text-[#1CFB4B]"
                 dangerouslySetInnerHTML={{
-                  __html: pageData.strategicpartnercontent.value,
+                  __html: pageData.strategicpartnerdescription.value,
                 }}
               />
+            </div>
 
+            <div>
               {pageData.strategicpartnercta.linkedItems.length > 0 && (
                 <div className="mt-4 flex gap-3 flex-wrap">
                   {pageData.strategicpartnercta.linkedItems.map((item: any) => {
@@ -111,21 +103,6 @@ export default function Home({ pageData }: any) {
               </h2>
 
               <img src={pageData.storyimage.value[0]?.url} alt="" />
-
-              {pageData.storycta.linkedItems.length > 0 && (
-                <div className="mt-4 flex gap-3 flex-wrap">
-                  {pageData.storycta.linkedItems.map((item: any) => {
-                    return (
-                      <CTAButton
-                        key={item.system.id}
-                        variant={item.elements.variant.value[0].name}
-                        buttonname={item.elements.name.value}
-                        buttonlink={item.elements.link.value}
-                      />
-                    );
-                  })}
-                </div>
-              )}
             </div>
 
             <div>
@@ -136,6 +113,23 @@ export default function Home({ pageData }: any) {
                 }}
               />
             </div>
+          </div>
+
+          <div>
+            {pageData.storycta.linkedItems.length > 0 && (
+              <div className="mt-4 flex gap-3 flex-wrap">
+                {pageData.storycta.linkedItems.map((item: any) => {
+                  return (
+                    <CTAButton
+                      key={item.system.id}
+                      variant={item.elements.variant.value[0].name}
+                      buttonname={item.elements.name.value}
+                      buttonlink={item.elements.link.value}
+                    />
+                  );
+                })}
+              </div>
+            )}
           </div>
         </div>
       </Section>
@@ -337,16 +331,9 @@ export default function Home({ pageData }: any) {
 
       <Section>
         <div className="container mx-auto">
-          <div className="flex flex-wrap gap-5 items-start justify-between">
-            <h2 className="text-3xl sm:text-5xl max-w-xl">
-              {highlightEV(pageData.experiencehighlightheading.value)}
-            </h2>
-            <img
-              className=" object-cover max-w-150 w-full"
-              src={pageData.experiencehighlightimage.value[0]?.url}
-              alt={pageData.experiencehighlightimage.value[0]?.name}
-            />
-          </div>
+          <h2 className="text-center text-3xl gradient-text">
+            {pageData.experiencehighlightheading.value}
+          </h2>
 
           <div className="mt-8">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-0">
@@ -402,16 +389,27 @@ export default function Home({ pageData }: any) {
               <h2 className="text-4xl tracking-tighter max-w-md">
                 {highlightEV(pageData.whoyoumeetheading.value)}
               </h2>
+
+              <div className="mt-4">
+                <img
+                  className=" object-cover max-w-150 w-full"
+                  src={pageData.experiencehighlightimage.value[0]?.url}
+                  alt={pageData.experiencehighlightimage.value[0]?.name}
+                />
+              </div>
             </div>
 
             <div>
               <div className="flex gap-5 items-center flex-wrap justify-center">
                 {pageData.whoyoumeetitems.linkedItems.map((item: any) => {
                   return (
-                    <div key={item.system.id} className="ev-gradient-stroke p-5 bg-black max-w-50 h-32">
+                    <div
+                      key={item.system.id}
+                      className="ev-gradient-stroke p-5 bg-black max-w-50 h-32"
+                    >
                       <h3 className="text-sm">{item.elements.name.value}</h3>
                     </div>
-                  )
+                  );
                 })}
               </div>
             </div>

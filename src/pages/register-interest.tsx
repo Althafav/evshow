@@ -55,6 +55,8 @@ export async function getServerSideProps({ query }: any) {
     codename = "register_interest_form_exhibitor";
   } else if (attendAs.toLowerCase() === "sponsor") {
     codename = "register_interest_form_sponsor";
+  } else if (attendAs.toLowerCase() === "speaker") {
+    codename = "register_interest_form_speaker"
   }
 
   const res = await deliveryClient.item(codename).depthParameter(2).toPromise();

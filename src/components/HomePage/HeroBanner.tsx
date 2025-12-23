@@ -36,8 +36,7 @@ export default function HeroBanner({
           <p className="mt-2 text-xl font-medium text-white">{subheading}</p>
           <p className="mt-2 text-sm font-normal text-white">
             The official international exhibition and conference dedicated to
-            the future of electric mobility. Delivered in strategic alignment
-            with Dubai’s Roads and Transport Authority, the event brings
+            the future of electric mobility. The event brings
             together global manufacturers, technology leaders, policymakers and
             investors shaping the next phase of sustainable transport.
           </p>

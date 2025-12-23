@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ExhibitorBanner({ heading, subheading }: any) {
+export default function ExhibitorBanner({ heading, subheading="", description }: any) {
   return (
     <div>
       <div className="relative overflow-hidden bg-[#021412]">
@@ -40,9 +40,10 @@ export default function ExhibitorBanner({ heading, subheading }: any) {
             {heading}
           </h1>
 
-          <p className="max-w-3xl mx-auto text-gray-300 text-base sm:text-lg leading-relaxed">
+          <p className="max-w-3xl mx-auto text-gray-300 text-base sm:text-lg leading-relaxed columns-2">
             {subheading}
           </p>
+          <div dangerouslySetInnerHTML={{__html: description }}/>
         </div>
       </div>
     </div>

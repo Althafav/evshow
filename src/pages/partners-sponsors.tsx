@@ -48,6 +48,7 @@ export default function Page({ pageData }: any) {
               </div>
 
               <div>
+                  <h3 className="mb-3">Benefits:</h3>
                 <CarouselSimple items={pageData.whysponsoritems.linkedItems} />
               </div>
             </div>
@@ -58,6 +59,51 @@ export default function Page({ pageData }: any) {
             alt={pageData.bannerheading.value}
             className="absolute -left-90 w-150 top-0 -z-10"
           />
+        </div>
+      </Section>
+
+       <Section>
+        <div className="container mx-auto">
+          <h3 className="text-3xl text-center mb-8">
+            {pageData.sponsoropportunityheading.value}
+          </h3>
+          <p className="text-md text-center text-gray-100 ">
+            {pageData.sponsoropportunitysubheading.value}
+          </p>
+
+          <div className="mt-8 grid sm:grid-cols-4 gap-5">
+            {pageData.sponsoropportunityitems.linkedItems.map((item: any) => {
+              return (
+                <div className="flex flex-col gap-2 items-center justify-center">
+                  <img
+                    className="w-12"
+                    src={item.elements.image.value[0]?.url}
+                    alt={item.elements.image.value[0]?.name}
+                  />
+                  <h3 className="text-center text-sm">
+                    {item.elements.name.value}
+                  </h3>
+                </div>
+              );
+            })}
+          </div>
+
+          <p className="mt-8 text-center gradient-text">{pageData.sponsorctasubheading.value}</p>
+
+          {pageData.sponsorctaitems.linkedItems.length > 0 && (
+            <div className="mt-4 flex gap-3 flex-wrap justify-center">
+              {pageData.sponsorctaitems.linkedItems.map((item: any) => {
+                return (
+                  <CTAButton
+                    key={item.system.id}
+                    variant={item.elements.variant.value[0].name}
+                    buttonname={item.elements.name.value}
+                    buttonlink={item.elements.link.value}
+                  />
+                );
+              })}
+            </div>
+          )}
         </div>
       </Section>
 
@@ -169,50 +215,7 @@ export default function Page({ pageData }: any) {
         </div>
       </Section>
 
-      <Section>
-        <div className="container mx-auto">
-          <h3 className="text-3xl text-center mb-8">
-            {pageData.sponsoropportunityheading.value}
-          </h3>
-          <p className="text-md text-center text-gray-100 ">
-            {pageData.sponsoropportunitysubheading.value}
-          </p>
-
-          <div className="mt-8 grid sm:grid-cols-4 gap-5">
-            {pageData.sponsoropportunityitems.linkedItems.map((item: any) => {
-              return (
-                <div className="flex flex-col gap-2 items-center justify-center">
-                  <img
-                    className="w-12"
-                    src={item.elements.image.value[0]?.url}
-                    alt={item.elements.image.value[0]?.name}
-                  />
-                  <h3 className="text-center text-sm">
-                    {item.elements.name.value}
-                  </h3>
-                </div>
-              );
-            })}
-          </div>
-
-          <p className="mt-8 text-center gradient-text">{pageData.sponsorctasubheading.value}</p>
-
-          {pageData.sponsorctaitems.linkedItems.length > 0 && (
-            <div className="mt-4 flex gap-3 flex-wrap justify-center">
-              {pageData.sponsorctaitems.linkedItems.map((item: any) => {
-                return (
-                  <CTAButton
-                    key={item.system.id}
-                    variant={item.elements.variant.value[0].name}
-                    buttonname={item.elements.name.value}
-                    buttonlink={item.elements.link.value}
-                  />
-                );
-              })}
-            </div>
-          )}
-        </div>
-      </Section>
+     
     </div>
   );
 }

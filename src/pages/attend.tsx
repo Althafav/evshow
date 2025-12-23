@@ -42,10 +42,16 @@ export default function attend({ pageData }: any) {
           <p className="text-xl max-w-2xl mx-auto text-center mb-3">
             {pageData.bannersubheading.value}
           </p>
-
           <p className="text-xl max-w-2xl mx-auto text-center gradient-text">
             {pageData.datevenue.value}
           </p>
+          <div
+          className="mt-4"
+            dangerouslySetInnerHTML={{
+              __html: pageData.bannerdescription.value,
+            }}
+          />
+
           {pageData.bannercta.linkedItems.length > 0 && (
             <div className="mt-4 flex gap-3 flex-wrap justify-center">
               {pageData.bannercta.linkedItems.map((item: any) => {
