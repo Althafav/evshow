@@ -46,7 +46,7 @@ export default function attend({ pageData }: any) {
             {pageData.datevenue.value}
           </p>
           <div
-          className="mt-4"
+            className="mt-4"
             dangerouslySetInnerHTML={{
               __html: pageData.bannerdescription.value,
             }}

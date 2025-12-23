@@ -131,7 +131,7 @@ export default function Page({ pageData }: any) {
         </div>
       </Section>
 
-      <Section>
+      {/* <Section>
         <div className="container mx-auto">
           <h2 className="text-3xl text-center gradient-text">
             {pageData.objectivesheading.value}
@@ -161,9 +161,9 @@ export default function Page({ pageData }: any) {
             })}
           </div>
         </div>
-      </Section>
+      </Section> */}
 
-      <Section className="relative h-180 flex justify-center items-center">
+      {/* <Section className="relative h-180 flex justify-center items-center">
         {pageData.whydubaiimage.value && (
           <div
             className="absolute inset-0 bg-cover bg-center mix-blend-lighten"
@@ -181,7 +181,7 @@ export default function Page({ pageData }: any) {
             dangerouslySetInnerHTML={{ __html: pageData.whydubaicontent.value }}
           />
         </div>
-      </Section>
+      </Section> */}
       <Section>
         <div className="container mx-auto">
           <IframeEmbed src={pageData.maplink.value} />
