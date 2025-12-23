@@ -154,6 +154,27 @@ export default function Page({ pageData }: any) {
 
       <Section>
         <div className="container mx-auto">
+          <div>
+            {pageData.whydubaicta.linkedItems.length > 0 && (
+              <div className="mt-4 flex gap-3 flex-wrap justify-center">
+                {pageData.whydubaicta.linkedItems.map((item: any) => {
+                  return (
+                    <CTAButton
+                      key={item.system.id}
+                      variant={item.elements.variant.value[0].name}
+                      buttonname={item.elements.name.value}
+                      buttonlink={item.elements.link.value}
+                    />
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        </div>
+      </Section>
+
+      <Section>
+        <div className="container mx-auto">
           <h2 className="text-3xl text-center">
             {pageData.hotelsheading.value}
           </h2>
@@ -248,7 +269,7 @@ export default function Page({ pageData }: any) {
         </div>
       </Section> */}
 
-       <Section>
+      <Section>
         <div className="container mx-auto">
           <h2 className="text-3xl gradient-text mb-8">
             {pageData.directionheading.value}
@@ -283,14 +304,11 @@ export default function Page({ pageData }: any) {
         </div>
       </Section>
 
-      
       <Section>
         <div className="container mx-auto">
           <IframeEmbed src={pageData.maplink.value} />
         </div>
       </Section>
-
-     
 
       <Section>
         <div className="container mx-auto">
