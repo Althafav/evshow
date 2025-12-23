@@ -266,7 +266,7 @@ export default function Home({ pageData }: any) {
               {pageData.ecosystemheading.value}
             </h2>
 
-            <div className="flex gap-10 mt-8 justify-center flex-wrap">
+            <div className="flex gap-10 mt-8 justify-center items-center flex-wrap">
               {pageData.ecosystemitems.linkedItems.map((item: any) => {
                 return (
                   <div key={item.system.id} className="flex gap-5 items-center">
@@ -295,7 +295,7 @@ export default function Home({ pageData }: any) {
                 <p>{pageData.conferencehighlightsubheading.value}</p>
               </div>
 
-              <div className="sm:col-span-6 flex flex-col items-end">
+              <div className="sm:col-span-6 flex flex-col sm:items-end">
                 <div className="grid sm:grid-cols-4 gap-5">
                   {pageData.conferencehighlightitems.linkedItems.map(
                     (item: any) => {
@@ -405,10 +405,10 @@ export default function Home({ pageData }: any) {
             </div>
 
             <div>
-              <div className="flex gap-5 items-center flex-wrap">
+              <div className="flex gap-5 items-center flex-wrap justify-center">
                 {pageData.whoyoumeetitems.linkedItems.map((item: any) => {
                   return (
-                    <div key={item.system.id} className="ev-gradient-stroke p-5 bg-black max-w-50 min-h-25">
+                    <div key={item.system.id} className="ev-gradient-stroke p-5 bg-black max-w-50 h-32">
                       <h3 className="text-sm">{item.elements.name.value}</h3>
                     </div>
                   )
