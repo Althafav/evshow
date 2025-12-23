@@ -75,6 +75,44 @@ export default function Home({ pageData }: any) {
         </div>
       </Section>
 
+      <Section>
+        <div className="container mx-auto">
+          <div className="grid sm:grid-cols-2 gap-5">
+            <div>
+              <h2 className="text-4xl tracking-tighter max-w-md">
+                {highlightEV(pageData.storyheading.value)}
+              </h2>
+
+              <img src={pageData.storyimage.value[0]?.url} alt="" />
+
+              {pageData.storycta.linkedItems.length > 0 && (
+                <div className="mt-4 flex gap-3 flex-wrap">
+                  {pageData.storycta.linkedItems.map((item: any) => {
+                    return (
+                      <CTAButton
+                        key={item.system.id}
+                        variant={item.elements.variant.value[0].name}
+                        buttonname={item.elements.name.value}
+                        buttonlink={item.elements.link.value}
+                      />
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+
+            <div>
+              <div
+                className="prose max-w-none text-white"
+                dangerouslySetInnerHTML={{
+                  __html: pageData.storycontent.value,
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      </Section>
+
       {/* story here */}
 
       <Section>
