@@ -155,7 +155,7 @@ export default function MenuComponent() {
 
           {/* Partner Logos */}
         </div>
-      </div>
+      </div> 
 
       {/* Mobile Menu */}
       <div

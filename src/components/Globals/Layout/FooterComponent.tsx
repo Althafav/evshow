@@ -3,7 +3,13 @@ import { deliveryClient } from "@/modules/Globals";
 import Link from "next/link";
 
 import React, { useEffect, useState } from "react";
-import { FaFacebook, FaInstagram, FaLinkedinIn,  FaTiktok, FaYoutube } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaLinkedinIn,
+  FaTiktok,
+  FaYoutube,
+} from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { PiSnapchatLogoFill } from "react-icons/pi";
 
@@ -72,7 +78,7 @@ export default function FooterComponent() {
                 aria-label="X (Twitter)"
                 className="w-8 h-8 bg-white inline-flex justify-center items-center text-black rounded-full"
               >
-                <FaXTwitter  size={18} />
+                <FaXTwitter size={18} />
               </a>
 
               <a
@@ -95,14 +101,14 @@ export default function FooterComponent() {
                 <FaTiktok size={18} />
               </a>
 
-               <a
+              <a
                 href="https://snapchat.com/t/lXXuxOvh"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="TikTok"
                 className="w-8 h-8 bg-white inline-flex justify-center items-center text-black rounded-full"
               >
-                <PiSnapchatLogoFill    size={18} />
+                <PiSnapchatLogoFill size={18} />
               </a>
             </div>
           </div>
@@ -111,22 +117,22 @@ export default function FooterComponent() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8">
               {pageData.footermenuitems.linkedItems.map((item: any) => (
                 <div key={item.system.id}>
-                  <Link
+                  <a
                     href={item.elements.link.value}
                     className="text-white text-xs font-semibold tracking-wide hover:opacity-85 transition"
                   >
                     {item.elements.name.value}
-                  </Link>
+                  </a>
 
                   <ul className="mt-4 space-y-2">
                     {item.elements.subitems.linkedItems.map((subItem: any) => (
                       <li key={subItem.system.id}>
-                        <Link
+                        <a
                           href={subItem.elements.link.value}
                           className="text-white/65 hover:text-white transition text-xs"
                         >
                           {subItem.elements.name.value}
-                        </Link>
+                        </a>
                       </li>
                     ))}
                   </ul>
@@ -145,11 +151,15 @@ export default function FooterComponent() {
         <div className="flex sm:flex-row flex-col justify-start sm:justify-between gap-5 my-5 sm:items-center">
           <div>
             <p className="gradient-text text-md">{pageData.datevenue.value}</p>
-          </div>
-          <div>
             <p className="text-xs text-white/60">
               © {new Date().getFullYear()} EV World. All rights reserved.
             </p>
+          </div>
+          <div>
+            <div className="flex gap-5 items-center">
+              <p>Terms & Conditions</p>
+              <p>Sitemap</p>
+            </div>
           </div>
         </div>
       </div>
