@@ -34,10 +34,10 @@ export default function FaqPage({ pageData, slug }: any) {
                       __html: item.elements.content.value,
                     }}
                   />
-                  <img
+                  {/* <img
                     src={item.elements.image.value[0]?.url}
                     alt={item.elements.name.value}
-                  />
+                  /> */}
                 </div>
               );
             })}
