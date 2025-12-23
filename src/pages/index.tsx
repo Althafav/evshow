@@ -13,9 +13,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  
   const langMap: Record<string, string> = {
-    en: "default",  
+    en: "default",
     ar: "Arabic",
     zh: "Chinese",
   };
@@ -48,6 +47,67 @@ export default function Home({ pageData }: any) {
         cta={pageData.bannercta.linkedItems}
         imageUrl={pageData.bannerimage.value[0]?.url}
       />
+
+      <Section>
+        <div className="container mx-auto">
+          <div className="ev-gradient-stroke p-10 sm:flex justify-between">
+            <div className="sm:flex gap-2">
+              <h2 className="gradient-text text-xl mb-3 sm:mb-0">
+                {pageData.strategicpartnerheading.value}
+              </h2>
+
+              <div
+                className="prose text-white prose-a:text-[#1CFB4B]"
+                dangerouslySetInnerHTML={{
+                  __html: pageData.strategicpartnerdescription.value,
+                }}
+              />
+            </div>
+
+            <div>
+              <img
+                className="sm:w-96 w-60 mt-4 sm:mt-0"
+                src={pageData.strategicpartnerlogo.value[0]?.url}
+                alt={pageData.strategicpartnerlogo.value[0]?.name}
+              />
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* story here */}
+
+      <Section>
+        <div className="container mx-auto">
+          <h2 className="text-3xl text-center gradient-text">
+            {pageData.objectivesheading.value}
+          </h2>
+          <div className="grid sm:grid-cols-2 gap-5 mt-8">
+            {pageData.objectivesitems.linkedItems.map((item: any) => {
+              return (
+                <div
+                  key={item.system.id}
+                  className="flex flex-col gap-5 bg-black p-10 rounded-3xl"
+                >
+                  <h4 className="text-xl font-bold">
+                    {item.elements.name.value}
+                  </h4>
+                  <div
+                    className="prose text-gray-100"
+                    dangerouslySetInnerHTML={{
+                      __html: item.elements.content.value,
+                    }}
+                  />
+                  <img
+                    src={item.elements.image.value[0]?.url}
+                    alt={item.elements.name.value}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </Section>
 
       {/* <StatsSection
         eventDate={pageData.eventdate.value}
@@ -233,33 +293,6 @@ export default function Home({ pageData }: any) {
               <CTAButton
                 buttonname={pageData.experiencehighlightctaname.value}
                 buttonlink={pageData.experiencehighlightctalink.value}
-              />
-            </div>
-          </div>
-        </div>
-      </Section>
-
-      <Section>
-        <div className="container mx-auto">
-          <div className="ev-gradient-stroke p-10 sm:flex justify-between">
-            <div className="sm:flex gap-2">
-              <h2 className="gradient-text text-xl mb-3 sm:mb-0">
-                {pageData.strategicpartnerheading.value}
-              </h2>
-
-              <div
-                className="prose text-white prose-a:text-[#1CFB4B]"
-                dangerouslySetInnerHTML={{
-                  __html: pageData.strategicpartnerdescription.value,
-                }}
-              />
-            </div>
-
-            <div>
-              <img
-                className="sm:w-96 w-60 mt-4 sm:mt-0"
-                src={pageData.strategicpartnerlogo.value[0]?.url}
-                alt={pageData.strategicpartnerlogo.value[0]?.name}
               />
             </div>
           </div>

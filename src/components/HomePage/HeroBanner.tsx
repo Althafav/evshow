@@ -49,6 +49,11 @@ export default function HeroBanner({
               })}
             </div>
           )}
+
+          <p className="mt-8">
+            In strategic partnership with RTA – Dubai Roads and Transport
+            Authority 
+          </p>
         </div>
       </div>
 
