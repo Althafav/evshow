@@ -175,6 +175,12 @@ export default function Page({ pageData }: any) {
 
       <Section>
         <div className="container mx-auto">
+          <IframeEmbed src={pageData.maplink.value} />
+        </div>
+      </Section>
+
+      <Section>
+        <div className="container mx-auto">
           <h2 className="text-3xl text-center">
             {pageData.hotelsheading.value}
           </h2>
@@ -301,12 +307,6 @@ export default function Page({ pageData }: any) {
               );
             })}
           </div>
-        </div>
-      </Section>
-
-      <Section>
-        <div className="container mx-auto">
-          <IframeEmbed src={pageData.maplink.value} />
         </div>
       </Section>
 
