@@ -12,6 +12,7 @@ import {
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { PiSnapchatLogoFill } from "react-icons/pi";
+import NewsLetterComponent from "../NewsLetterComponent";
 
 export default function FooterComponent() {
   const [pageData, setPageData] = useState<any | null>(null);
@@ -30,6 +31,7 @@ export default function FooterComponent() {
   if (!pageData) return null;
   return (
     <div className="">
+      <NewsLetterComponent/>
       <div className="container mx-auto">
         <div className="relative grid lg:grid-cols-12 gap-10 py-10">
           <div className="lg:col-span-4">
