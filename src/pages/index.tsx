@@ -1,3 +1,4 @@
+import WhyExhibitCarousel from "@/components/ExhibitorPage/WhyExhibitCarousel";
 import MenuComponent from "@/components/Globals/Layout/MenuComponent";
 import HeroBanner from "@/components/HomePage/HeroBanner";
 import StatsSection from "@/components/HomePage/StatsSection";
@@ -50,26 +51,52 @@ export default function Home({ pageData }: any) {
 
       <Section>
         <div className="container mx-auto">
-          <div className="ev-gradient-stroke p-10 sm:flex justify-between">
-            <div className="sm:flex gap-2">
-              <h2 className="gradient-text text-xl mb-3 sm:mb-0">
-                {pageData.strategicpartnerheading.value}
-              </h2>
+          <div className="grid sm:grid-cols-12 gap-5">
+            <div className="sm:col-span-8">
+              <div className="ev-gradient-stroke p-10 sm:flex flex-wrap justify-center">
+                <div className="sm:flex gap-2">
+                  <h2 className="gradient-text text-xl mb-3 sm:mb-0">
+                    {pageData.strategicpartnerheading.value}
+                  </h2>
 
+                  <div
+                    className="prose text-white prose-a:text-[#1CFB4B]"
+                    dangerouslySetInnerHTML={{
+                      __html: pageData.strategicpartnerdescription.value,
+                    }}
+                  />
+                </div>
+
+                <div className="mt-4">
+                  <img
+                    className="sm:w-76 w-60 mt-4 sm:mt-0"
+                    src={pageData.strategicpartnerlogo.value[0]?.url}
+                    alt={pageData.strategicpartnerlogo.value[0]?.name}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="sm:col-span-4">
               <div
-                className="prose text-white prose-a:text-[#1CFB4B]"
                 dangerouslySetInnerHTML={{
-                  __html: pageData.strategicpartnerdescription.value,
+                  __html: pageData.strategicpartnercontent.value,
                 }}
               />
-            </div>
 
-            <div>
-              <img
-                className="sm:w-96 w-60 mt-4 sm:mt-0"
-                src={pageData.strategicpartnerlogo.value[0]?.url}
-                alt={pageData.strategicpartnerlogo.value[0]?.name}
-              />
+              {pageData.strategicpartnercta.linkedItems.length > 0 && (
+                <div className="mt-4 flex gap-3 flex-wrap">
+                  {pageData.strategicpartnercta.linkedItems.map((item: any) => {
+                    return (
+                      <CTAButton
+                        key={item.system.id}
+                        variant={item.elements.variant.value[0].name}
+                        buttonname={item.elements.name.value}
+                        buttonlink={item.elements.link.value}
+                      />
+                    );
+                  })}
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -144,6 +171,37 @@ export default function Home({ pageData }: any) {
               );
             })}
           </div>
+        </div>
+      </Section>
+
+      <Section className="relative">
+        <div className=" ">
+          <div className="container mx-auto">
+            <div className="grid sm:grid-cols-2 gap-5">
+              <div className="">
+                <h2 className="text-3xl sm:text-4xl mb-4 max-w-sm ">
+                  {highlightEV(pageData.whyheading.value)}
+                </h2>
+                <div
+                  className="prose text-white"
+                  dangerouslySetInnerHTML={{
+                    __html: pageData.whycontent.value,
+                  }}
+                />
+              </div>
+
+              <div>
+                <h3 className="mb-3">Benefits:</h3>
+                <WhyExhibitCarousel pageData={pageData} />
+              </div>
+            </div>
+          </div>
+
+          {/* <img
+            src={pageData.whyexhibitimage.value[0]?.url}
+            alt={pageData.bannerheading.value}
+            className="absolute -left-90 w-150 top-0 -z-10"
+          /> */}
         </div>
       </Section>
 

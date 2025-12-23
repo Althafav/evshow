@@ -34,6 +34,13 @@ export default function HeroBanner({
           </h1>
 
           <p className="mt-2 text-xl font-medium text-white">{subheading}</p>
+          <p className="mt-2 text-sm font-normal text-white">
+            The official international exhibition and conference dedicated to
+            the future of electric mobility. Delivered in strategic alignment
+            with Dubai’s Roads and Transport Authority, the event brings
+            together global manufacturers, technology leaders, policymakers and
+            investors shaping the next phase of sustainable transport.
+          </p>
 
           {/* <p className="mt-5 text-md sm:text-base text-white tracking-wide">
             {dateVenue}
@@ -61,7 +68,7 @@ export default function HeroBanner({
               <div className="flex items-center gap-4 p-4 rounded-lg border border-emerald-500/30 bg-[#021412]">
                 <ClockIcon />
                 <span className="text-white font-medium">
-                 10:00 AM - 6:00 PM
+                  10:00 AM - 6:00 PM
                 </span>
               </div>
 
@@ -69,7 +76,7 @@ export default function HeroBanner({
               <div className="flex items-center gap-4 p-4 rounded-lg border border-emerald-500/30 bg-[#021412]">
                 <HallIcon />
                 <span className="text-white font-medium">
-                 Zabeel Hall - 4, 5, 6
+                  Zabeel Hall - 4, 5, 6
                 </span>
               </div>
             </div>
@@ -89,8 +96,6 @@ export default function HeroBanner({
               })}
             </div>
           )}
-
-         
         </div>
       </div>
 
