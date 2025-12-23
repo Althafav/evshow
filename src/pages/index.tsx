@@ -210,7 +210,7 @@ export default function Home({ pageData }: any) {
         statsheading={pageData.statisticsheading.value}
         statsitems={pageData.statsitems.linkedItems}
       /> */}
-      <Section className="relative">
+      {/* <Section className="relative">
         {pageData.whoyoumeetbackgroundimage.value[0]?.url && (
           <div
             className="absolute inset-0 bg-cover w-full bg-center brightness-75"
@@ -257,7 +257,7 @@ export default function Home({ pageData }: any) {
             </div>
           </div>
         </div>
-      </Section>
+      </Section> */}
 
       <Section>
         <div className="container mx-auto">
@@ -390,6 +390,30 @@ export default function Home({ pageData }: any) {
                 buttonname={pageData.experiencehighlightctaname.value}
                 buttonlink={pageData.experiencehighlightctalink.value}
               />
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      <Section>
+        <div className="container mx-auto">
+          <div className="grid sm:grid-cols-2 gap-5">
+            <div>
+              <h2 className="text-4xl tracking-tighter max-w-md">
+                {highlightEV(pageData.whoyoumeetheading.value)}
+              </h2>
+            </div>
+
+            <div>
+              <div className="flex gap-5 items-center flex-wrap">
+                {pageData.whoyoumeetitems.linkedItems.map((item: any) => {
+                  return (
+                    <div key={item.system.id} className="ev-gradient-stroke p-5 bg-black max-w-50 min-h-25">
+                      <h3 className="text-sm">{item.elements.name.value}</h3>
+                    </div>
+                  )
+                })}
+              </div>
             </div>
           </div>
         </div>
