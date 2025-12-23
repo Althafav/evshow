@@ -29,7 +29,7 @@ export default function FaqPage({ pageData, slug }: any) {
                     {item.elements.name.value}
                   </h2>
                   <div
-                    className="text-gray-100 prose max-w-none"
+                    className="text-gray-100 prose max-w-none prose-invert"
                     dangerouslySetInnerHTML={{
                       __html: item.elements.content.value,
                     }}
