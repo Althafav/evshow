@@ -2,6 +2,10 @@ import { highlightEV } from "@/lib/textHelpers";
 import Link from "next/link";
 import React from "react";
 import CTAButton from "../UI/CTAButton";
+import CalenderIcon from "../UI/Icons/CalenderIcon";
+import VenueIcon from "../UI/Icons/VenueIcon";
+import ClockIcon from "../UI/Icons/ClockIcon";
+import HallIcon from "../UI/Icons/HallIcon";
 
 export default function HeroBanner({
   heading,
@@ -31,9 +35,45 @@ export default function HeroBanner({
 
           <p className="mt-2 text-xl font-medium text-white">{subheading}</p>
 
-          <p className="mt-5 text-md sm:text-base text-white tracking-wide">
+          {/* <p className="mt-5 text-md sm:text-base text-white tracking-wide">
             {dateVenue}
-          </p>
+          </p> */}
+
+          <div className="mt-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+              {/* Show Dates */}
+              <div className="flex items-center gap-4 p-4 rounded-lg border border-emerald-500/30 bg-[#021412]">
+                <CalenderIcon />
+                <span className="text-white font-medium">
+                  10-12 November 2026
+                </span>
+              </div>
+
+              {/* Venue */}
+              <div className="flex items-center gap-4 p-4 rounded-lg border border-emerald-500/30 bg-[#021412]">
+                <VenueIcon />
+                <span className="text-white font-medium">
+                  Dubai World Trade Centre
+                </span>
+              </div>
+
+              {/* Timings */}
+              <div className="flex items-center gap-4 p-4 rounded-lg border border-emerald-500/30 bg-[#021412]">
+                <ClockIcon />
+                <span className="text-white font-medium">
+                 10:00 AM - 6:00 PM
+                </span>
+              </div>
+
+              {/* Hall No */}
+              <div className="flex items-center gap-4 p-4 rounded-lg border border-emerald-500/30 bg-[#021412]">
+                <HallIcon />
+                <span className="text-white font-medium">
+                 Zabeel Hall - 4, 5, 6
+                </span>
+              </div>
+            </div>
+          </div>
 
           {cta.length > 0 && (
             <div className="mt-3 flex gap-3 flex-wrap">
@@ -50,10 +90,7 @@ export default function HeroBanner({
             </div>
           )}
 
-          <p className="mt-8">
-            In strategic partnership with RTA – Dubai Roads and Transport
-            Authority 
-          </p>
+         
         </div>
       </div>
 
