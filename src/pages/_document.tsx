@@ -13,7 +13,7 @@ export default function Document() {
         />
         <HeadAnalyticsComponent/>
       </Head>
-      <body className="antialiased ">
+      <body className="antialiased overflow-x-hidden">
         <BodyAnalyticsComponent/>
         <Main />
         <NextScript />

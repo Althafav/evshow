@@ -30,9 +30,9 @@ export default function CalenderIcon() {
           y2="5.27093"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#0096FF" />
-          <stop offset="0.0001" stop-color="#07AFD2" />
-          <stop offset="1" stop-color="#1CFB4B" />
+          <stop stopColor="#0096FF" />
+          <stop offset="0.0001" stopColor="#07AFD2" />
+          <stop offset="1" stopColor="#1CFB4B" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_26_6780"
@@ -42,9 +42,9 @@ export default function CalenderIcon() {
           y2="7.7925"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#0096FF" />
-          <stop offset="0.0001" stop-color="#07AFD2" />
-          <stop offset="1" stop-color="#1CFB4B" />
+          <stop stopColor="#0096FF" />
+          <stop offset="0.0001" stopColor="#07AFD2" />
+          <stop offset="1" stopColor="#1CFB4B" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_26_6780"
@@ -54,9 +54,9 @@ export default function CalenderIcon() {
           y2="2.03877"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#0096FF" />
-          <stop offset="0.0001" stop-color="#07AFD2" />
-          <stop offset="1" stop-color="#1CFB4B" />
+          <stop stopColor="#0096FF" />
+          <stop offset="0.0001" stopColor="#07AFD2" />
+          <stop offset="1" stopColor="#1CFB4B" />
         </linearGradient>
       </defs>
     </svg>

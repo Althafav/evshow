@@ -9,7 +9,7 @@ export default function ClockIcon() {
       viewBox="0 0 26 26"
       fill="none"
     >
-      <g clip-path="url(#clip0_26_6765)">
+      <g clipPath="url(#clip0_26_6765)">
         <path
           d="M21.9379 3.76391C19.5106 1.33675 16.2835 0 12.8509 0C9.41831 0 6.19118 1.33675 3.76391 3.76391C1.33675 6.19118 0 9.41831 0 12.8509C0 16.2835 1.33675 19.5106 3.76391 21.9379C6.19118 24.3651 9.41831 25.7018 12.8509 25.7018C16.2835 25.7018 19.5106 24.3651 21.9379 21.9379C24.3651 19.5106 25.7018 16.2835 25.7018 12.8509C25.7018 9.41831 24.3651 6.19118 21.9379 3.76391ZM20.873 20.873C18.7302 23.0158 15.8813 24.1959 12.8509 24.1959C9.82055 24.1959 6.97162 23.0158 4.82883 20.873C2.68604 18.7302 1.50597 15.8813 1.50597 12.8509C1.50597 9.82055 2.68604 6.97162 4.82883 4.82883C6.97162 2.68604 9.82055 1.50597 12.8509 1.50597C15.8813 1.50597 18.7302 2.68604 20.873 4.82883C23.0158 6.97162 24.1959 9.82055 24.1959 12.8509C24.1959 15.8813 23.0158 18.7302 20.873 20.873Z"
           fill="url(#paint0_linear_26_6765)"
@@ -76,9 +76,9 @@ export default function ClockIcon() {
           y2="4.62969"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#0096FF" />
-          <stop offset="0.0001" stop-color="#07AFD2" />
-          <stop offset="1" stop-color="#1CFB4B" />
+          <stop stopColor="#0096FF" />
+          <stop offset="0.0001" stopColor="#07AFD2" />
+          <stop offset="1" stopColor="#1CFB4B" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_26_6765"
@@ -88,9 +88,9 @@ export default function ClockIcon() {
           y2="3.55199"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#0096FF" />
-          <stop offset="0.0001" stop-color="#07AFD2" />
-          <stop offset="1" stop-color="#1CFB4B" />
+          <stop stopColor="#0096FF" />
+          <stop offset="0.0001" stopColor="#07AFD2" />
+          <stop offset="1" stopColor="#1CFB4B" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_26_6765"
@@ -100,9 +100,9 @@ export default function ClockIcon() {
           y2="4.03574"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#0096FF" />
-          <stop offset="0.0001" stop-color="#07AFD2" />
-          <stop offset="1" stop-color="#1CFB4B" />
+          <stop stopColor="#0096FF" />
+          <stop offset="0.0001" stopColor="#07AFD2" />
+          <stop offset="1" stopColor="#1CFB4B" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_26_6765"
@@ -112,9 +112,9 @@ export default function ClockIcon() {
           y2="7.48334"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#0096FF" />
-          <stop offset="0.0001" stop-color="#07AFD2" />
-          <stop offset="1" stop-color="#1CFB4B" />
+          <stop stopColor="#0096FF" />
+          <stop offset="0.0001" stopColor="#07AFD2" />
+          <stop offset="1" stopColor="#1CFB4B" />
         </linearGradient>
         <linearGradient
           id="paint4_linear_26_6765"
@@ -124,9 +124,9 @@ export default function ClockIcon() {
           y2="12.3791"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#0096FF" />
-          <stop offset="0.0001" stop-color="#07AFD2" />
-          <stop offset="1" stop-color="#1CFB4B" />
+          <stop stopColor="#0096FF" />
+          <stop offset="0.0001" stopColor="#07AFD2" />
+          <stop offset="1" stopColor="#1CFB4B" />
         </linearGradient>
         <linearGradient
           id="paint5_linear_26_6765"
@@ -136,9 +136,9 @@ export default function ClockIcon() {
           y2="18.3411"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#0096FF" />
-          <stop offset="0.0001" stop-color="#07AFD2" />
-          <stop offset="1" stop-color="#1CFB4B" />
+          <stop stopColor="#0096FF" />
+          <stop offset="0.0001" stopColor="#07AFD2" />
+          <stop offset="1" stopColor="#1CFB4B" />
         </linearGradient>
         <linearGradient
           id="paint6_linear_26_6765"
@@ -148,9 +148,9 @@ export default function ClockIcon() {
           y2="21.5439"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#0096FF" />
-          <stop offset="0.0001" stop-color="#07AFD2" />
-          <stop offset="1" stop-color="#1CFB4B" />
+          <stop stopColor="#0096FF" />
+          <stop offset="0.0001" stopColor="#07AFD2" />
+          <stop offset="1" stopColor="#1CFB4B" />
         </linearGradient>
         <linearGradient
           id="paint7_linear_26_6765"
@@ -160,9 +160,9 @@ export default function ClockIcon() {
           y2="20.2119"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#0096FF" />
-          <stop offset="0.0001" stop-color="#07AFD2" />
-          <stop offset="1" stop-color="#1CFB4B" />
+          <stop stopColor="#0096FF" />
+          <stop offset="0.0001" stopColor="#07AFD2" />
+          <stop offset="1" stopColor="#1CFB4B" />
         </linearGradient>
         <linearGradient
           id="paint8_linear_26_6765"
@@ -172,9 +172,9 @@ export default function ClockIcon() {
           y2="21.6665"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#0096FF" />
-          <stop offset="0.0001" stop-color="#07AFD2" />
-          <stop offset="1" stop-color="#1CFB4B" />
+          <stop stopColor="#0096FF" />
+          <stop offset="0.0001" stopColor="#07AFD2" />
+          <stop offset="1" stopColor="#1CFB4B" />
         </linearGradient>
         <linearGradient
           id="paint9_linear_26_6765"
@@ -184,9 +184,9 @@ export default function ClockIcon() {
           y2="18.2189"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#0096FF" />
-          <stop offset="0.0001" stop-color="#07AFD2" />
-          <stop offset="1" stop-color="#1CFB4B" />
+          <stop stopColor="#0096FF" />
+          <stop offset="0.0001" stopColor="#07AFD2" />
+          <stop offset="1" stopColor="#1CFB4B" />
         </linearGradient>
         <linearGradient
           id="paint10_linear_26_6765"
@@ -196,9 +196,9 @@ export default function ClockIcon() {
           y2="12.3791"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#0096FF" />
-          <stop offset="0.0001" stop-color="#07AFD2" />
-          <stop offset="1" stop-color="#1CFB4B" />
+          <stop stopColor="#0096FF" />
+          <stop offset="0.0001" stopColor="#07AFD2" />
+          <stop offset="1" stopColor="#1CFB4B" />
         </linearGradient>
         <linearGradient
           id="paint11_linear_26_6765"
@@ -208,9 +208,9 @@ export default function ClockIcon() {
           y2="7.3606"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#0096FF" />
-          <stop offset="0.0001" stop-color="#07AFD2" />
-          <stop offset="1" stop-color="#1CFB4B" />
+          <stop stopColor="#0096FF" />
+          <stop offset="0.0001" stopColor="#07AFD2" />
+          <stop offset="1" stopColor="#1CFB4B" />
         </linearGradient>
         <linearGradient
           id="paint12_linear_26_6765"
@@ -220,9 +220,9 @@ export default function ClockIcon() {
           y2="5.81027"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#0096FF" />
-          <stop offset="0.0001" stop-color="#07AFD2" />
-          <stop offset="1" stop-color="#1CFB4B" />
+          <stop stopColor="#0096FF" />
+          <stop offset="0.0001" stopColor="#07AFD2" />
+          <stop offset="1" stopColor="#1CFB4B" />
         </linearGradient>
         <linearGradient
           id="paint13_linear_26_6765"
@@ -232,9 +232,9 @@ export default function ClockIcon() {
           y2="8.10731"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#0096FF" />
-          <stop offset="0.0001" stop-color="#07AFD2" />
-          <stop offset="1" stop-color="#1CFB4B" />
+          <stop stopColor="#0096FF" />
+          <stop offset="0.0001" stopColor="#07AFD2" />
+          <stop offset="1" stopColor="#1CFB4B" />
         </linearGradient>
         <clipPath id="clip0_26_6765">
           <rect width="25.7018" height="25.7018" fill="white" />
