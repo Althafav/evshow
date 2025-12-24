@@ -1,3 +1,4 @@
+import ArticleCarousel from "@/components/Carousel.tsx/ArticleCarousel";
 import PressReleaseCarousel from "@/components/Carousel.tsx/PressReleaseCarousel";
 import CTABlock from "@/components/UI/CTABlock";
 import CTAButton from "@/components/UI/CTAButton";
@@ -58,35 +59,33 @@ export default function Page({ pageData }: any) {
         </div>
       </Section>
 
-    
       <div>
         <div className="container mx-auto">
-          <PressReleaseCarousel pageData={pageData} />
-          {/* <div className="grid grid-cols-2 gap-5">
-            {pageData.pressreleaseitems.linkedItems.map((item: any) => {
-              return (
-                <div key={item.system.id} className="flex ev-gradient-stroke rounded-3xl overflow-hidden">
-                  <div>
-                    <img
-                      className="h-full min-w-50 object-cover"
-                      src={item.elements.image.value[0]?.url}
-                      alt=""
-                    />
-                  </div>
-                  <div className="p-5 bg-black ">
-                    <h4 className="mb-4">{item.elements.heading.value}</h4>
+          <ArticleCarousel items={pageData.pressreleaseitems.linkedItems} />
+        </div>
+      </div>
 
-                    <div
-                      className="line-clamp-2"
-                      dangerouslySetInnerHTML={{
-                        __html: item.elements.content.value,
-                      }}
-                    />
-                  </div>
-                </div>
-              );
-            })}
-          </div> */}
+      <Section className="relative h-72">
+        {pageData.pressreleaseimage.value && (
+          <div
+            className="absolute inset-0 bg-cover bg-center brightness-25"
+            style={{
+              backgroundImage: `url(${pageData.pressreleaseimage.value[0]?.url})`,
+            }}
+          />
+        )}
+        <div className="">
+          <div className="relative z-10 container mx-auto">
+            <h2 className="text-center text-3xl">
+              {pageData.blogheading.value}
+            </h2>
+          </div>
+        </div>
+      </Section>
+
+      <div>
+        <div className="container mx-auto">
+          <ArticleCarousel items={pageData.blogitems.linkedItems} />
         </div>
       </div>
       <Section id="press-kit">
