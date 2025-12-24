@@ -106,3 +106,7 @@ h3,
     color: white;
   }
 }
+
+img {
+  max-width: 100%;
+}
