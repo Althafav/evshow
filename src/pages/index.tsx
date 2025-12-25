@@ -255,12 +255,12 @@ export default function Home({ pageData }: any) {
 
       <Section>
         <div className="container mx-auto">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             <h2 className="text-center text-3xl gradient-text">
               {pageData.ecosystemheading.value}
             </h2>
 
-            <div className="flex gap-10 mt-8 justify-center items-center flex-wrap">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-10 mt-8">
               {pageData.ecosystemitems.linkedItems.map((item: any) => {
                 return (
                   <div key={item.system.id} className="flex gap-5 items-center">
@@ -269,7 +269,7 @@ export default function Home({ pageData }: any) {
                       src={item.elements.image.value[0]?.url}
                       alt={item.elements.image.value[0]?.name}
                     />
-                    <p className="max-w-37.5">{item.elements.name.value}</p>
+                    <p className="">{item.elements.name.value}</p>
                   </div>
                 );
               })}

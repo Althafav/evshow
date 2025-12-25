@@ -41,7 +41,13 @@ export default function Page({ pageData }: any) {
         </div>
       </div>
 
-      <Section className="relative h-72">
+      <Section>
+        <div className="container mx-auto">
+          <h3 className="text-3xl sm:text-4xl text-center">Coming soon.</h3>
+        </div>
+      </Section>
+
+      {/* <Section className="relative h-72">
         {pageData.pressreleaseimage.value && (
           <div
             className="absolute inset-0 bg-cover bg-center brightness-25"
@@ -63,9 +69,9 @@ export default function Page({ pageData }: any) {
         <div className="container mx-auto">
           <ArticleCarousel items={pageData.pressreleaseitems.linkedItems} />
         </div>
-      </div>
+      </div> */}
 
-      <Section className="relative h-72">
+      {/* <Section className="relative h-72">
         {pageData.pressreleaseimage.value && (
           <div
             className="absolute inset-0 bg-cover bg-center brightness-25"
@@ -87,7 +93,7 @@ export default function Page({ pageData }: any) {
         <div className="container mx-auto">
           <ArticleCarousel items={pageData.blogitems.linkedItems} />
         </div>
-      </div>
+      </div> */}
       <Section id="press-kit">
         <CTABlock
           heading={pageData.presskitctaheading.value}

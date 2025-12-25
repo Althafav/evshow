@@ -107,7 +107,7 @@ export default function Page({ pageData }: any) {
         </div>
       </Section>
 
-      <Section id="sponsor-register-interest">
+      {/* <Section id="sponsor-register-interest">
         <div className="container mx-auto">
           <h3 className="text-3xl text-center mb-8">
             {pageData.sponsorsheading.value}
@@ -183,28 +183,7 @@ export default function Page({ pageData }: any) {
                     <div className="">
                       <div className="flex flex-wrap justify-center gap-8">
                         <h3>To be Announced Soon.</h3>
-                        {/* {item.elements.items.linkedItems.map(
-                          (partner: any, iIdx: number) => {
-                            return (
-                              <Link
-                                href={partner.elements.websitelink.value}
-                                target="_blank"
-                                key={iIdx}
-                                className="flex items-center justify-center w-44 h-30 "
-                              >
-                                <div className="flex items-center justify-center">
-                                  <img
-                                    width={300}
-                                    height={200}
-                                    src={partner.elements.logo.value[0]?.url}
-                                    alt={partner.elements.name.value}
-                                    className=" object-contain aspect-video shadow-sm p-4"
-                                  />
-                                </div>
-                              </Link>
-                            );
-                          }
-                        )} */}
+                       
                       </div>
                     </div>
                   </div>
@@ -213,7 +192,7 @@ export default function Page({ pageData }: any) {
             )}
           </div>
         </div>
-      </Section>
+      </Section> */}
 
      
     </div>
