@@ -10,7 +10,7 @@ export default function Page() {
           <img
             src="/assets/imgs/dubai.jpg"
             alt="Dubai skyline"
-            className="w-full h-[260px] md:h-[360px] object-cover"
+            className="w-full h-65 md:h-90 object-cover"
           />
           <div className="absolute inset-0 bg-black/40 flex items-end">
             <h1 className="p-6 text-3xl md:text-4xl font-semibold text-white">

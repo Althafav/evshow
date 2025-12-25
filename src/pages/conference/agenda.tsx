@@ -1,24 +1,27 @@
 "use client";
 
-import React, { useMemo, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import Section from "@/components/UI/Section";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 type AgendaSession = {
   id: string;
-  label: string; // e.g. "Opening Keynote", "Session 1.1"
-  time: string; // e.g. "12:00 – 12:30"
+  label: string;
+  time: string;
   title: string;
   description: string;
 };
 
 type AgendaDay = {
   key: "day1" | "day2" | "day3";
-  day: string; // "Day 1"
-  weekday: string; // "Tuesday"
-  date: string; // "Nov 10, 2026"
+  day: string;
+  weekday: string;
+  date: string;
   theme: string;
   sessions: AgendaSession[];
 };
+
+const DAY_KEYS: AgendaDay["key"][] = ["day1", "day2", "day3"];
 
 export default function AgendaPage() {
   const days: AgendaDay[] = useMemo(
@@ -184,7 +187,7 @@ export default function AgendaPage() {
               "ADAS, AI-driven safety, V2X communication, and Dubai’s Autonomous Strategy KPIs",
           },
 
-           {
+          {
             id: "d2-9",
             label: "GCC Showcase ",
             time: "16:00 - 16:30",
@@ -202,38 +205,39 @@ export default function AgendaPage() {
               "Automakers and regulators on AI, autonomy, and connected EV ecosystems.",
           },
 
-           {
+          {
             id: "d2-11",
             label: "Wrap-Up ",
             time: "16:45 - 17:00",
             title: "Day 2 Insights",
-            description:
-              "Summary of key takeaways",
+            description: "Summary of key takeaways",
           },
-          
         ],
       },
       {
         key: "day3",
         day: "Day 3",
-        weekday: "Thursday",    
+        weekday: "Thursday",
         date: "Nov 12, 2026",
-        theme: "Designing EV-Integrated Cities & Scaling Electrification Across Air, Sea & Industry",
+        theme:
+          "Designing EV-Integrated Cities & Scaling Electrification Across Air, Sea & Industry",
         sessions: [
           {
             id: "d3-1",
             label: "Keynote",
             time: "12:00 – 12:20",
             title: "EVs in Vision 2030 Smart Cities",
-            description: "How MENA urban strategies are embedding electrified transport into city design.",
+            description:
+              "How MENA urban strategies are embedding electrified transport into city design.",
           },
 
-           {
+          {
             id: "d3-2",
             label: " Session 3.1",
             time: "12:00 – 12:20",
             title: "EVs in Vision 2030 Smart Cities",
-            description: "How MENA urban strategies are embedding electrified transport into city design.",
+            description:
+              "How MENA urban strategies are embedding electrified transport into city design.",
           },
         ],
       },
@@ -241,7 +245,26 @@ export default function AgendaPage() {
     []
   );
 
-  const [activeDayKey, setActiveDayKey] = useState<AgendaDay["key"]>("day1");
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  // Read initial day from URL (?day=day1|day2|day3)
+  const dayFromUrl = (searchParams.get("day") as AgendaDay["key"] | null) ?? "day1";
+  const safeDayFromUrl: AgendaDay["key"] = DAY_KEYS.includes(dayFromUrl as any)
+    ? (dayFromUrl as AgendaDay["key"])
+    : "day1";
+
+  const [activeDayKey, setActiveDayKey] = useState<AgendaDay["key"]>(safeDayFromUrl);
+
+  // Keep state synced when user uses back/forward or link changes
+  useEffect(() => {
+    if (safeDayFromUrl !== activeDayKey) {
+      setActiveDayKey(safeDayFromUrl);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [safeDayFromUrl]);
+
   const activeDay = days.find((d) => d.key === activeDayKey) || days[0];
 
   // refs for right-side scrolling
@@ -253,12 +276,23 @@ export default function AgendaPage() {
     el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
+  const setDayInUrl = (nextDay: AgendaDay["key"]) => {
+    // preserve other query params
+    const params = new URLSearchParams(searchParams.toString());
+    params.set("day", nextDay);
+    router.push(`${pathname}?${params.toString()}`, { scroll: false });
+  };
+
+  const onDayChange = (nextDay: AgendaDay["key"]) => {
+    setActiveDayKey(nextDay);
+    setDayInUrl(nextDay);
+  };
+
   return (
     <Section className="relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 -z-10 bg-[#031a1f]" />
       <div className="absolute inset-0 -z-10 bg-linear-to-b from-[#062b2f] via-[#031a1f] to-[#031a1f] opacity-90" />
-      {/* soft diagonal shapes (subtle) */}
       <div className="pointer-events-none absolute -left-40 -top-40 h-105 w-130 rotate-12 bg-[#1cfb4b]/10 blur-3xl -z-10" />
       <div className="pointer-events-none absolute -right-40 -top-20 h-105 w-130 -rotate-12 bg-[#0096ff]/10 blur-3xl -z-10" />
 
@@ -270,7 +304,7 @@ export default function AgendaPage() {
             return (
               <button
                 key={d.key}
-                onClick={() => setActiveDayKey(d.key)}
+                onClick={() => onDayChange(d.key)}
                 className={[
                   "group flex items-center gap-3 rounded-md border px-4 py-2 text-left transition",
                   active
@@ -278,9 +312,7 @@ export default function AgendaPage() {
                     : "border-white/15 bg-white/0 text-white hover:border-white/30",
                 ].join(" ")}
               >
-                <div className="text-sm font-semibold leading-none">
-                  {d.day}
-                </div>
+                <div className="text-sm font-semibold leading-none">{d.day}</div>
                 <div
                   className={[
                     "text-[10px] leading-tight opacity-90",

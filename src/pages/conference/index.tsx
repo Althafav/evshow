@@ -103,7 +103,8 @@ export default function conference({ pageData }: any) {
                     {pageData.structureitems.linkedItems.map(
                       (item: any, index: number) => {
                         return (
-                          <div
+                          <a
+                            href={item.elements.ctalink.value}
                             key={item.system.id}
                             className="flex items-start gap-5 bg-black p-10 ev-gradient-stroke"
                           >
@@ -122,7 +123,7 @@ export default function conference({ pageData }: any) {
                                 }}
                               />
                             </div>
-                          </div>
+                          </a>
                         );
                       }
                     )}
