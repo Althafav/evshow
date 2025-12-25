@@ -77,7 +77,7 @@ export default function attend({ pageData }: any) {
             {pageData.whoattendsubheading.value}
           </p>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 mt-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-5 mt-8">
             {pageData.whoattenditems.linkedItems.map((item: any) => {
               return (
                 <div key={item.system.id} className="p-5 ev-gradient-stroke">
