@@ -7,7 +7,13 @@ export default function NewsLetterComponent() {
     JsLoader.loadFile(`/assets/js/newsLetter.js`);
   }, []);
   return (
-    <div className="py-10">
+    <div className="py-10 relative">
+      <img
+        src="/assets/imgs/evworld.jpg"
+        alt=""
+        className="absolute -z-1 inset-0 w-full h-full object-cover brightness-50"
+      />
+
       <form
         method="POST"
         action="https://strategic31677.activehosted.com/proc.php"
@@ -62,7 +68,9 @@ export default function NewsLetterComponent() {
         <div
           className="_form-thank-you text-white text-center w-full"
           style={{ display: "none" }}
-        >Thank you</div>
+        >
+          Thank you
+        </div>
       </form>
     </div>
   );

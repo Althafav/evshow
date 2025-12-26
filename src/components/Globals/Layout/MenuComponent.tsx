@@ -63,7 +63,7 @@ export default function MenuComponent() {
   if (!pageData) return null;
 
   return (
-    <header className="py-4 relative z-50">
+    <header className="py-4 relative z-50" style={{direction: "ltr"}}>
       <div className="container mx-auto ">
         {/* Logo */}
         <div className="flex justify-between items-center">

@@ -159,8 +159,8 @@ export default function FooterComponent() {
           </div>
           <div>
             <div className="flex gap-5 items-center">
-              <p>Terms & Conditions</p>
-              <p>Sitemap</p>
+              <a href="/terms-conditions">Terms & Conditions</a>
+              <a href="/sitemap.xml">Sitemap</a>
             </div>
           </div>
         </div>
